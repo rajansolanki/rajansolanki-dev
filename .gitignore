@@ -1,0 +1,8 @@
+node_modules
+public
+.cache
+cypress/screenshots
+cypress/videos
+
+*.log
+.DS_Store
