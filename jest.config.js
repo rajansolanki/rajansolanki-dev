@@ -1,4 +1,11 @@
 module.exports = {
+  reporters: [
+    'default',
+    [
+      'jest-junit',
+      { outputDirectory: 'reports/jest', outputName: 'results.xml' },
+    ],
+  ],
   transform: {
     '^.+\\.[jt]sx?$': '<rootDir>/jest-preprocess.js',
   },
@@ -13,4 +20,5 @@ module.exports = {
     __PATH_PREFIX__: '',
   },
   setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
+  coverageDirectory: '<rootDir>/reports/jest',
 };

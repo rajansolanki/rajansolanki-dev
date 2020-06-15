@@ -1,0 +1,49 @@
+constants:
+  - cache_key: &cache_key yarn-v1-{{ checksum "yarn.lock" }}
+
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cypress/base:13.8.0
+        environment:
+          TERM: xterm
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - *cache_key
+            - yarn-v1-
+      - run:
+          name: yarn
+          command: yarn --frozen-lockfile
+      - run:
+          name: commitlint
+          command: yarn commitlint --from origin/master --to ${CIRCLE_SHA1} -V
+      - run:
+          name: eslint
+          command: yarn eslint "**/*.{tsx,ts,js}" --max-warnings=0
+      - run:
+          name: prettier
+          command: yarn prettier -c "**/*.{tsx,ts,js,html,scss,md,yml,json}"
+      - run:
+          name: tsc
+          command: |
+            yarn tsc -p cypress
+            yarn tsc -p .
+      - save_cache:
+          key: *cache_key
+          paths:
+            - ~/.cache/yarn
+      - run:
+          name: test:spec
+          command: yarn test:spec --coverage --maxWorkers=2
+      - run:
+          name: test:e2e
+          command: yarn test:e2e
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: cypress/videos
+      - store_artifacts:
+          path: cypress/screenshots
