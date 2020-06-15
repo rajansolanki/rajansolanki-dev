@@ -1,0 +1,12 @@
+:root {
+  --grey-light-text: #808595;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  color: var(--grey-light-text);
+}
