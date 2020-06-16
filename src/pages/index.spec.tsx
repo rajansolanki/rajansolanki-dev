@@ -15,6 +15,7 @@ jest.mock('gatsby', () => ({
 
 jest.mock('components', () => ({
   Code: jest.fn().mockReturnValue(<div>CodeComponent</div>),
+  Text: jest.fn().mockReturnValue(<div>TextComponent</div>),
 }));
 
 beforeEach(jest.clearAllMocks);
@@ -36,6 +37,10 @@ describe('`Index`', () => {
       expect(Code).toHaveBeenCalledWith({ code: 'html' }, {});
     });
   });
+
+  it('should display `Text`', () => {
+    expect(Page.Text).toBeTruthy();
+  });
 });
 
 class Page {
@@ -45,6 +50,10 @@ class Page {
 
   static get Code(): HTMLElement {
     return screen.getByText('CodeComponent');
+  }
+
+  static get Text(): HTMLElement {
+    return screen.getByText('TextComponent');
   }
 }
 

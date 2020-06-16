@@ -1,6 +1,7 @@
 :root {
   --grey-light-text: #808595;
   --grey-dark: #1d1f21;
+  --black-text: #000;
 }
 
 body {
@@ -10,4 +11,15 @@ body {
   font-style: normal;
   line-height: 1.4;
   color: var(--grey-light-text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--black-text);
+}
+
+h4 {
+  font-size: 1.1em;
 }
