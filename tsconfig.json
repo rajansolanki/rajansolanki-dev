@@ -3,7 +3,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "styles": ["src/styles"]
+      "graphql-types": ["graphql-types"],
+      "styles": ["src/styles"],
+      "components": ["src/components"]
     },
     "target": "esnext",
     "module": "commonjs",
