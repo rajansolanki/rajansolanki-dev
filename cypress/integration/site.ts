@@ -7,6 +7,8 @@ const elements = {
   error: 'component-error > .banner',
   errorAppText: 'component-error + div',
   errorGlobalText: 'component-error + div',
+  masonryText: 'Masonry',
+  masonry: 'component-masonry img',
 };
 
 beforeEach(() => cy.visit('/'));
@@ -51,4 +53,10 @@ it('should display errors', () => {
     offset: { top: 500, left: 0 },
   });
   cy.get(elements.error).should('not.be.visible');
+});
+
+it('should display masonry', () => {
+  cy.get(elements.masonry).should('not.exist');
+  cy.contains(elements.masonryText).scrollIntoView();
+  cy.get(elements.masonry).should('be.visible');
 });

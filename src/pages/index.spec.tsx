@@ -19,6 +19,7 @@ jest.mock('components', () => ({
 }));
 jest.mock('partials', () => ({
   Error: jest.fn().mockReturnValue(<div>ErrorComponent</div>),
+  Masonry: jest.fn().mockReturnValue(<div>MasonryComponent</div>),
 }));
 
 beforeEach(jest.clearAllMocks);
@@ -48,6 +49,10 @@ describe('`Index`', () => {
   it('should display `Error`', () => {
     expect(Page.Error).toBeTruthy();
   });
+
+  it('should display `Masonry`', () => {
+    expect(Page.Masonry).toBeTruthy();
+  });
 });
 
 class Page {
@@ -65,6 +70,10 @@ class Page {
 
   static get Error(): HTMLElement {
     return screen.getByText('ErrorComponent');
+  }
+
+  static get Masonry(): HTMLElement {
+    return screen.getByText('MasonryComponent');
   }
 }
 
