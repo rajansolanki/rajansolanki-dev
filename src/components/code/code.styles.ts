@@ -3,7 +3,9 @@ import styled from '@emotion/styled';
 import { GRID } from 'styles';
 
 export const Code = styled.div`
-  margin: 0.5em 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 5vh auto;
   padding: 1em;
   font-size: 0.7em;
   background: var(--grey-dark);

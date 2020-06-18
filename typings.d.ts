@@ -15,3 +15,9 @@ declare module '@bit/rajansolanki.dev.error' {
 
   export = setup;
 }
+
+declare module '@bit/rajansolanki.dev.masonry' {
+  import setup from '@bit/rajansolanki.dev.masonry/dist/index';
+
+  export = setup;
+}

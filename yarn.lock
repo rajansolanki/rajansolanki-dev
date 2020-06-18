@@ -1395,6 +1395,14 @@
     "@bit/rajansolanki.dev.sass" "1.0.0"
     "@bit/rajansolanki.dev.shared" "1.1.0"
 
+"@bit/rajansolanki.dev.masonry@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/rajansolanki.dev.masonry/-/rajansolanki.dev.masonry-1.0.2.tgz#e6624bf515d841c5d49efada4e8a88967e2d709e"
+  integrity sha1-5mJL9RXYQcXUnvraToqIln4tcJ4=
+  dependencies:
+    "@bit/rajansolanki.dev.sass" "1.0.0"
+    "@bit/rajansolanki.dev.shared" "1.1.0"
+
 "@bit/rajansolanki.dev.sass@1.0.0":
   version "1.0.0"
   resolved "https://node.bit.dev/rajansolanki.dev.sass/-/rajansolanki.dev.sass-1.0.0.tgz#340676e78e601404016f967f9dd2149678cbddbb"
