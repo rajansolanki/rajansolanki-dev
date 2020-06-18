@@ -27,3 +27,9 @@ declare module '@bit/rajansolanki.dev.hover' {
 
   export = setup;
 }
+
+declare module '@bit/rajansolanki.dev.cart' {
+  import setup from '@bit/rajansolanki.dev.cart/dist/index';
+
+  export = setup;
+}
