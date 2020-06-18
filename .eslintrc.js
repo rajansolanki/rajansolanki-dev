@@ -50,9 +50,11 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['graphql-types.ts', '**/*.spec.{ts,tsx}'],
+      files: ['jest-setup.js', 'graphql-types.ts', '**/*.spec.{ts,tsx}'],
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
       },
     },
   ],

@@ -9,7 +9,9 @@
     "test:spec": "jest",
     "test:spec:watch": "jest --watch",
     "test:e2e": "start-test serve http://localhost:8000 '$(npm bin)/cypress run'",
-    "test:e2e:watch": "start-test serve http://localhost:8000 '$(npm bin)/cypress open'"
+    "test:e2e:watch": "start-test serve http://localhost:8000 '$(npm bin)/cypress open'",
+    "postuninstall": "ngcc",
+    "postinstall": "ngcc"
   },
   "husky": {
     "hooks": {
@@ -18,8 +20,18 @@
     }
   },
   "dependencies": {
+    "@angular/animations": "9.1.4",
+    "@angular/common": "9.1.4",
+    "@angular/compiler": "9.1.4",
+    "@angular/core": "9.1.4",
+    "@angular/elements": "9.1.4",
+    "@angular/platform-browser": "9.1.4",
+    "@bit/rajansolanki.dev.error": "^2.0.2",
+    "@bit/rajansolanki.dev.load-more": "^2.0.1",
+    "@bit/rajansolanki.dev.loading-bar": "^1.0.3",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
     "gatsby": "2.22.12",
     "gatsby-plugin-emotion": "^4.2.1",
     "gatsby-plugin-graphql-codegen": "2.7.1",
@@ -33,9 +45,13 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0-beta.2"
+    "react-helmet": "^6.0.0-beta.2",
+    "rxjs": "6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "0.10.3"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "9.1.4",
     "@babel/core": "^7.0.0",
     "@babel/preset-typescript": "^7.10.1",
     "@commitlint/cli": "^8.3.5",

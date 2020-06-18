@@ -15,6 +15,12 @@ jobs:
             - *cache_key
             - yarn-v1-
       - run:
+          name: bit.dev registry
+          command: |
+            echo "always-auth=true" >> ~/.npmrc
+            echo "@bit:registry=https://node.bit.dev" >> ~/.npmrc
+            echo "//node.bit.dev/:_authToken={$BIT_TOKEN}" >> ~/.npmrc
+      - run:
           name: yarn
           command: yarn --frozen-lockfile
       - run:

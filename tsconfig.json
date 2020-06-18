@@ -1,11 +1,13 @@
 {
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "typings.d.ts"],
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
       "graphql-types": ["graphql-types"],
       "styles": ["src/styles"],
-      "components": ["src/components"]
+      "components": ["src/components"],
+      "shared": ["src/shared"],
+      "partials": ["src/partials"]
     },
     "target": "esnext",
     "module": "commonjs",

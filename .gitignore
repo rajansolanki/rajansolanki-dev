@@ -4,6 +4,7 @@ public
 cypress/screenshots
 cypress/videos
 reports
+.vercel
 
 *.log
 .DS_Store

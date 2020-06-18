@@ -15,6 +15,8 @@ module.exports = {
       '<rootDir>/__mocks__/file-mock.js',
     '^styles$': '<rootDir>/src/styles',
     '^components$': '<rootDir>/src/components',
+    '^shared$': '<rootDir>/src/shared',
+    '^partials$': '<rootDir>/src/partials',
   },
   testPathIgnorePatterns: ['node_modules', '\\.cache', '<rootDir>.*/public'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],

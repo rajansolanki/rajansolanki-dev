@@ -17,6 +17,9 @@ jest.mock('components', () => ({
   Code: jest.fn().mockReturnValue(<div>CodeComponent</div>),
   Text: jest.fn().mockReturnValue(<div>TextComponent</div>),
 }));
+jest.mock('partials', () => ({
+  Error: jest.fn().mockReturnValue(<div>ErrorComponent</div>),
+}));
 
 beforeEach(jest.clearAllMocks);
 afterEach(expect.hasAssertions);
@@ -41,6 +44,10 @@ describe('`Index`', () => {
   it('should display `Text`', () => {
     expect(Page.Text).toBeTruthy();
   });
+
+  it('should display `Error`', () => {
+    expect(Page.Error).toBeTruthy();
+  });
 });
 
 class Page {
@@ -54,6 +61,10 @@ class Page {
 
   static get Text(): HTMLElement {
     return screen.getByText('TextComponent');
+  }
+
+  static get Error(): HTMLElement {
+    return screen.getByText('ErrorComponent');
   }
 }
 
