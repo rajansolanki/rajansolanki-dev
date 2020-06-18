@@ -21,3 +21,9 @@ declare module '@bit/rajansolanki.dev.masonry' {
 
   export = setup;
 }
+
+declare module '@bit/rajansolanki.dev.hover' {
+  import setup from '@bit/rajansolanki.dev.hover/dist/index';
+
+  export = setup;
+}

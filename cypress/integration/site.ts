@@ -9,6 +9,8 @@ const elements = {
   errorGlobalText: 'component-error + div',
   masonryText: 'Masonry',
   masonry: 'component-masonry img',
+  hoverText: 'Hover',
+  hover: 'component-hover a',
 };
 
 beforeEach(() => cy.visit('/'));
@@ -59,4 +61,10 @@ it('should display masonry', () => {
   cy.get(elements.masonry).should('not.exist');
   cy.contains(elements.masonryText).scrollIntoView();
   cy.get(elements.masonry).should('be.visible');
+});
+
+it('should display hover', () => {
+  cy.get(elements.hover).should('not.exist');
+  cy.contains(elements.hoverText).scrollIntoView();
+  cy.get(elements.hover).should('be.visible');
 });
