@@ -1379,6 +1379,14 @@
     "@bit/rajansolanki.dev.sass" "1.0.0"
     "@bit/rajansolanki.dev.shared" "1.1.0"
 
+"@bit/rajansolanki.dev.hover@^1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/rajansolanki.dev.hover/-/rajansolanki.dev.hover-1.0.1.tgz#3b98b24e63d9db003e483941b3fb75f3f330910a"
+  integrity sha1-O5iyTmPZ2wA+SDlBs/t18/MwkQo=
+  dependencies:
+    "@bit/rajansolanki.dev.sass" "1.0.0"
+    "@bit/rajansolanki.dev.shared" "1.1.0"
+
 "@bit/rajansolanki.dev.load-more@^2.0.1":
   version "2.0.2"
   resolved "https://node.bit.dev/rajansolanki.dev.load-more/-/rajansolanki.dev.load-more-2.0.2.tgz#0c042c6e95062a3ba6c9ab52d8d11886a78286bd"

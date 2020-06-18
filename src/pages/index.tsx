@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import { CodeExampleQuery } from 'graphql-types';
 import { Code, Text } from 'components';
-import { Error, Masonry } from 'partials';
+import { Error, Masonry, Hover } from 'partials';
 
 const Index: FC = () => {
   const codeExampleData: CodeExampleQuery = useStaticQuery(graphql`
@@ -44,6 +44,7 @@ const Index: FC = () => {
 
       <Error />
       <Masonry />
+      <Hover />
     </>
   );
 };

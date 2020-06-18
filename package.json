@@ -27,6 +27,7 @@
     "@angular/elements": "9.1.4",
     "@angular/platform-browser": "9.1.4",
     "@bit/rajansolanki.dev.error": "^2.0.2",
+    "@bit/rajansolanki.dev.hover": "^1.0.1",
     "@bit/rajansolanki.dev.load-more": "^2.0.1",
     "@bit/rajansolanki.dev.loading-bar": "^1.0.3",
     "@bit/rajansolanki.dev.masonry": "^1.0.2",

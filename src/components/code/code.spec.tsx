@@ -1,7 +1,9 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, RenderResult } from '@testing-library/react';
 
 import { Code } from './code';
+
+let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
 afterEach(expect.hasAssertions);
@@ -13,6 +15,12 @@ describe('`Code`', () => {
     it('should display code', () => {
       expect(Page.code).toBeTruthy();
     });
+
+    it('should set `className` if passed', () => {
+      comp.rerender(<Code className="className" code="Cont<br/>ent." />);
+
+      expect(Page.code).toHaveClass('className');
+    });
   });
 });
 
@@ -23,5 +31,5 @@ class Page {
 }
 
 function setupTest(): void {
-  render(<Code code="<p>Cont<br/>ent.<p>" />);
+  comp = render(<Code code="Cont<br/>ent." />);
 }
