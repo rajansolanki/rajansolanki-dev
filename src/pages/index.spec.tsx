@@ -22,6 +22,7 @@ jest.mock('partials', () => ({
   Masonry: jest.fn().mockReturnValue(<div>MasonryComponent</div>),
   Hover: jest.fn().mockReturnValue(<div>HoverComponent</div>),
   Cart: jest.fn().mockReturnValue(<div>CartComponent</div>),
+  Search: jest.fn().mockReturnValue(<div>SearchComponent</div>),
 }));
 
 beforeEach(jest.clearAllMocks);
@@ -63,6 +64,10 @@ describe('`Index`', () => {
   it('should display `Cart`', () => {
     expect(Page.Cart).toBeTruthy();
   });
+
+  it('should display `Search`', () => {
+    expect(Page.Search).toBeTruthy();
+  });
 });
 
 class Page {
@@ -92,6 +97,10 @@ class Page {
 
   static get Cart(): HTMLElement {
     return screen.getByText('CartComponent');
+  }
+
+  static get Search(): HTMLElement {
+    return screen.getByText('SearchComponent');
   }
 }
 
