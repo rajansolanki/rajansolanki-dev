@@ -33,3 +33,9 @@ declare module '@bit/rajansolanki.dev.cart' {
 
   export = setup;
 }
+
+declare module '@bit/rajansolanki.dev.search' {
+  import setup from '@bit/rajansolanki.dev.search/dist/index';
+
+  export = setup;
+}

@@ -20,6 +20,12 @@ const elements = {
   cartItemsMinus: 'component-cart app-cart-item .quantity-minus',
   cartItemsRemove: 'component-cart app-cart-item .item-remove',
   cartCheckoutLink: 'component-cart #link',
+  searchText: 'Search',
+  search: 'component-search input',
+  searchClear: 'component-search #clear',
+  searchAutocomplete: 'component-search component-autocomplete',
+  searchAutocompleteOptions:
+    'component-search component-autocomplete component-option',
 };
 
 beforeEach(() => cy.visit('/'));
@@ -97,4 +103,24 @@ it('should display cart', () => {
   cy.get(elements.cartItemsCount).should('contain.text', 1);
   cy.get(elements.cartItems).should('have.length', 1);
   cy.get(elements.cartCheckoutLink).should('not.have.class', 'disabled');
+});
+
+it('should display search', () => {
+  cy.get(elements.search).should('not.exist');
+  cy.contains(elements.searchText).scrollIntoView();
+  cy.get(elements.search).should('be.visible').and('not.have.value');
+  cy.get(elements.searchClear).should('not.be.visible');
+  cy.get(elements.searchAutocomplete).should('not.be.visible');
+  cy.get(elements.search).type('pa');
+  cy.get(elements.searchClear).should('be.visible');
+  cy.get(elements.searchAutocomplete).should('be.visible');
+  cy.get(elements.searchAutocompleteOptions)
+    .first()
+    .should('be.visible')
+    .and('contain.text', 'painting')
+    .and('not.have.class', 'ng-animating')
+    .click();
+  cy.get(elements.searchAutocompleteOptions).first().click();
+  cy.get(elements.searchAutocomplete).should('not.be.visible');
+  cy.get(elements.search).should('have.value', 'painting');
 });

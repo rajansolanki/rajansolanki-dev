@@ -2105,3 +2105,9 @@ export type CodeMasonryQueryVariables = Exact<{ [key: string]: never }>;
 export type CodeMasonryQuery = {
   markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
 };
+
+export type CodeSearchQueryVariables = Exact<{ [key: string]: never }>;
+
+export type CodeSearchQuery = {
+  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
+};

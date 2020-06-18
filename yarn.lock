@@ -45,6 +45,11 @@
   resolved "https://registry.yarnpkg.com/@angular/elements/-/elements-9.1.4.tgz#b3bedbce72a2d61493f2cab4a09dadd1117cd91a"
   integrity sha512-VXb+/eZv2x8CsDESnk8ICysDE3C2Htuj76WiG6NO4X1aX26XLTvnT5YLnOJ+8l8L88eh6s80Rphw6Gr6amUXHA==
 
+"@angular/forms@9.1.4":
+  version "9.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-9.1.4.tgz#7cb75b5731bd6cbcf4a45b7b2cc68b3581de8cc1"
+  integrity sha512-Njt+pMLfPBchL0/ayIjJqXL6ZfM4Ccvf7KO1wS1HMzh3QlmfNa0JSgc4pfrbRJAMN9g7V/FYLyKejs1bJZkenA==
+
 "@angular/platform-browser@9.1.4":
   version "9.1.4"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-9.1.4.tgz#c4fe868f12a6593702967a957a6bc8aa50c34f3b"
@@ -1423,6 +1428,15 @@
   version "1.0.0"
   resolved "https://node.bit.dev/rajansolanki.dev.sass/-/rajansolanki.dev.sass-1.0.0.tgz#340676e78e601404016f967f9dd2149678cbddbb"
   integrity sha1-NAZ2545gFAQBb5Z/ndIUlnjL3bs=
+
+"@bit/rajansolanki.dev.search@^1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/rajansolanki.dev.search/-/rajansolanki.dev.search-1.0.1.tgz#cb9584859b988a265217621d2e06a179d8f75834"
+  integrity sha1-y5WEhZuYiiZSF2IdLgahedj3WDQ=
+  dependencies:
+    "@bit/rajansolanki.dev.sass" "1.0.0"
+    "@bit/rajansolanki.dev.shared" "1.1.0"
+    fuse.js "^6.0.4"
 
 "@bit/rajansolanki.dev.shared@1.1.0":
   version "1.1.0"
@@ -7357,6 +7371,11 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+
+fuse.js@^6.0.4:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-6.2.0.tgz#a54d00541e1a371c7e22d79d14cca0b62340f592"
+  integrity sha512-i8Grj5u800Nmg240pJ0h2tU/So7srYPanb2gCwnw9rcCPynH8yiudlfTJGVsYoHkYYYBtiBog/EvotduzEmDJg==
 
 gatsby-cli@^2.12.37:
   version "2.12.45"
