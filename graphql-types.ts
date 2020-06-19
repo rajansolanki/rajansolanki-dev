@@ -2111,3 +2111,9 @@ export type CodeSearchQueryVariables = Exact<{ [key: string]: never }>;
 export type CodeSearchQuery = {
   markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
 };
+
+export type CodeSlideQueryVariables = Exact<{ [key: string]: never }>;
+
+export type CodeSlideQuery = {
+  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
+};

@@ -39,3 +39,9 @@ declare module '@bit/rajansolanki.dev.search' {
 
   export = setup;
 }
+
+declare module '@bit/rajansolanki.dev.slide' {
+  import setup from '@bit/rajansolanki.dev.slide/dist/index';
+
+  export = setup;
+}

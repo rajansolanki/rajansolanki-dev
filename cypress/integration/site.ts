@@ -26,6 +26,11 @@ const elements = {
   searchAutocomplete: 'component-search component-autocomplete',
   searchAutocompleteOptions:
     'component-search component-autocomplete component-option',
+  slideText: 'Slide',
+  slide: 'component-slide > div',
+  slideVariantSelect: 'component-slide select',
+  slideImageContainer: 'component-slide component-image > div',
+  slideImage: 'component-slide component-image img',
 };
 
 beforeEach(() => cy.visit('/'));
@@ -123,4 +128,20 @@ it('should display search', () => {
   cy.get(elements.searchAutocompleteOptions).first().click();
   cy.get(elements.searchAutocomplete).should('not.be.visible');
   cy.get(elements.search).should('have.value', 'painting');
+});
+
+it('should display slide', () => {
+  cy.get(elements.slide).should('not.exist');
+  cy.contains(elements.slideText).scrollIntoView();
+  cy.get(elements.slide).should('be.visible');
+  cy.get(elements.slideVariantSelect)
+    .and('contain', 'Blue')
+    .and('contain', 'Black')
+    .find(':selected')
+    .contains('Blue');
+  cy.get(elements.slideImageContainer).should('have.class', 'loaded');
+  cy.get(elements.slideImage).should('be.visible');
+  cy.get(elements.slideVariantSelect).select('Black');
+  cy.get(elements.slideImageContainer).should('have.class', 'loading');
+  cy.get(elements.slideImageContainer).should('have.class', 'loaded');
 });
