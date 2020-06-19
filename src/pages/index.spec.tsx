@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { render, screen } from '@testing-library/react';
 
 import { Code } from 'components';
@@ -11,19 +12,12 @@ jest.mock('gatsby', () => ({
       html: 'html',
     },
   }),
+  Link: jest.fn().mockReturnValue(<div>Link</div>),
 }));
 
 jest.mock('components', () => ({
   Code: jest.fn().mockReturnValue(<div>CodeComponent</div>),
   Text: jest.fn().mockReturnValue(<div>TextComponent</div>),
-}));
-jest.mock('partials', () => ({
-  Error: jest.fn().mockReturnValue(<div>ErrorComponent</div>),
-  Masonry: jest.fn().mockReturnValue(<div>MasonryComponent</div>),
-  Hover: jest.fn().mockReturnValue(<div>HoverComponent</div>),
-  Cart: jest.fn().mockReturnValue(<div>CartComponent</div>),
-  Search: jest.fn().mockReturnValue(<div>SearchComponent</div>),
-  Slide: jest.fn().mockReturnValue(<div>SlideComponent</div>),
 }));
 
 beforeEach(jest.clearAllMocks);
@@ -50,28 +44,20 @@ describe('`Index`', () => {
     expect(Page.Text).toBeTruthy();
   });
 
-  it('should display `Error`', () => {
-    expect(Page.Error).toBeTruthy();
-  });
+  describe('`Link`', () => {
+    it('should be displayed', () => {
+      expect(Page.Link).toBeTruthy();
+    });
 
-  it('should display `Masonry`', () => {
-    expect(Page.Masonry).toBeTruthy();
-  });
-
-  it('should display `Hover`', () => {
-    expect(Page.Hover).toBeTruthy();
-  });
-
-  it('should display `Cart`', () => {
-    expect(Page.Cart).toBeTruthy();
-  });
-
-  it('should display `Search`', () => {
-    expect(Page.Search).toBeTruthy();
-  });
-
-  it('should display `Slide`', () => {
-    expect(Page.Slide).toBeTruthy();
+    it('should pass props', () => {
+      expect(Link).toHaveBeenCalledWith(
+        {
+          to: '/projects/laura-lea',
+          children: 'Laura Lea',
+        },
+        {}
+      );
+    });
   });
 });
 
@@ -88,28 +74,8 @@ class Page {
     return screen.getByText('TextComponent');
   }
 
-  static get Error(): HTMLElement {
-    return screen.getByText('ErrorComponent');
-  }
-
-  static get Masonry(): HTMLElement {
-    return screen.getByText('MasonryComponent');
-  }
-
-  static get Hover(): HTMLElement {
-    return screen.getByText('HoverComponent');
-  }
-
-  static get Cart(): HTMLElement {
-    return screen.getByText('CartComponent');
-  }
-
-  static get Search(): HTMLElement {
-    return screen.getByText('SearchComponent');
-  }
-
-  static get Slide(): HTMLElement {
-    return screen.getByText('SlideComponent');
+  static get Link(): HTMLElement {
+    return screen.getByText('Link');
   }
 }
 
