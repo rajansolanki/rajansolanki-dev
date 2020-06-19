@@ -1443,6 +1443,14 @@
   resolved "https://node.bit.dev/rajansolanki.dev.shared/-/rajansolanki.dev.shared-1.1.0.tgz#cb49824e91574e8c145f25a4f7c59cf6c607ac86"
   integrity sha1-y0mCTpFXTowUXyWk98Wc9sYHrIY=
 
+"@bit/rajansolanki.dev.slide@^1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/rajansolanki.dev.slide/-/rajansolanki.dev.slide-1.0.1.tgz#ed0bf07e59efcaa93c9f357cd2e2d09385040307"
+  integrity sha1-7Qvwflnvyqk8nzV80uLQk4UEAwc=
+  dependencies:
+    "@bit/rajansolanki.dev.sass" "1.0.0"
+    "@bit/rajansolanki.dev.shared" "1.1.0"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
