@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import { CodeExampleQuery } from 'graphql-types';
 import { Code, Text } from 'components';
-import { Error, Masonry, Hover, Cart, Search, Slide } from 'partials';
 
 const Index: FC = () => {
   const codeExampleData: CodeExampleQuery = useStaticQuery(graphql`
@@ -41,13 +40,7 @@ const Index: FC = () => {
           tortor tincidunt consectetur.
         </p>
       </Text>
-
-      <Error />
-      <Masonry />
-      <Hover />
-      <Cart />
-      <Search />
-      <Slide />
+      <Link to="/projects/laura-lea">Laura Lea</Link>
     </>
   );
 };
