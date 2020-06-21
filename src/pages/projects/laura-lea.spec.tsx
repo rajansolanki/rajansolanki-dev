@@ -18,6 +18,10 @@ afterEach(expect.hasAssertions);
 describe('`LauraLea`', () => {
   beforeEach(setupTest);
 
+  it('should display title', () => {
+    expect(Page.title).toBeTruthy();
+  });
+
   it('should display components', () => {
     expect(Page.Masonry).toBeTruthy();
     expect(Page.Search).toBeTruthy();
@@ -29,6 +33,10 @@ describe('`LauraLea`', () => {
 });
 
 class Page {
+  static get title(): HTMLElement {
+    return screen.getByText('VIQ');
+  }
+
   static get Error(): HTMLElement {
     return screen.getByText('ErrorComponent');
   }
