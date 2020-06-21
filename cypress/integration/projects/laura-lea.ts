@@ -1,5 +1,6 @@
 context('Laura Lea', () => {
   const elements = {
+    title: 'h1',
     loadingBar: 'component-loading-bar > div',
     loadMore: 'component-load-more > div',
     loadMoreHexagon: 'component-load-more svg',
@@ -34,6 +35,10 @@ context('Laura Lea', () => {
   };
 
   beforeEach(() => cy.visit('/projects/laura-lea'));
+
+  it('should display title', () => {
+    cy.get(elements.title).should('have.text', 'Laura Lea');
+  });
 
   it('should display masonry', () => {
     cy.get(elements.masonry).should('not.exist');
