@@ -11,8 +11,22 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'content',
-        path: `${__dirname}/src/content`,
+        name: 'code',
+        path: `${__dirname}/src/content/code`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'jobs',
+        path: `${__dirname}/src/content/jobs`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: `${__dirname}/src/content/projects`,
       },
     },
     {

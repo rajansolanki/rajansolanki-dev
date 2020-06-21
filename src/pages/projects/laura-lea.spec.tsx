@@ -34,7 +34,7 @@ describe('`LauraLea`', () => {
 
 class Page {
   static get title(): HTMLElement {
-    return screen.getByText('VIQ');
+    return screen.getByText('Laura Lea');
   }
 
   static get Error(): HTMLElement {
