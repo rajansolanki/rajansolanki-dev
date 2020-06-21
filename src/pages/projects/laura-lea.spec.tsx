@@ -1,8 +1,25 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
+import { Intro } from 'components';
 import LauraLea from './laura-lea';
 
+jest.mock('gatsby', () => ({
+  graphql: jest.fn(),
+  useStaticQuery: jest.fn().mockReturnValue({
+    markdownRemark: {
+      frontmatter: {
+        title: 'title',
+        role: 'role',
+      },
+      html: 'html',
+    },
+  }),
+}));
+
+jest.mock('components', () => ({
+  Intro: jest.fn().mockReturnValue(<div>IntroComponent</div>),
+}));
 jest.mock('partials', () => ({
   Error: jest.fn().mockReturnValue(<div>ErrorComponent</div>),
   Masonry: jest.fn().mockReturnValue(<div>MasonryComponent</div>),
@@ -18,8 +35,17 @@ afterEach(expect.hasAssertions);
 describe('`LauraLea`', () => {
   beforeEach(setupTest);
 
-  it('should display title', () => {
-    expect(Page.title).toBeTruthy();
+  describe('`Intro`', () => {
+    it('should be displayed', () => {
+      expect(Page.Intro).toBeTruthy();
+    });
+
+    it('should pass props', () => {
+      expect(Intro).toHaveBeenCalledWith(
+        { title: 'title', role: 'role', description: 'html' },
+        {}
+      );
+    });
   });
 
   it('should display components', () => {
@@ -33,8 +59,8 @@ describe('`LauraLea`', () => {
 });
 
 class Page {
-  static get title(): HTMLElement {
-    return screen.getByText('Laura Lea');
+  static get Intro(): HTMLElement {
+    return screen.getByText('IntroComponent');
   }
 
   static get Error(): HTMLElement {

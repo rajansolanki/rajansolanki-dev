@@ -1,4 +1,5 @@
 :root {
+  --white-text: #fff;
   --grey-light-text: #808595;
   --grey-dark: #1d1f21;
   --black-text: #000;
@@ -21,6 +22,10 @@ h2,
 h3,
 h4 {
   color: var(--black-text);
+}
+
+h1 {
+  font-size: 1.5em;
 }
 
 h4 {
