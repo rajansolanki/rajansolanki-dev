@@ -4,7 +4,7 @@ import { Error, Masonry, Hover, Cart, Search, Slide } from 'partials';
 
 const LauraLea: FC = () => (
   <>
-    <h1>VIQ</h1>
+    <h1>Laura Lea</h1>
     <div style={{ height: '100vh' }} />
     <Masonry />
     <Search />

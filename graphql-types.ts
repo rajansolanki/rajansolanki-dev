@@ -567,6 +567,11 @@ export type FileFieldsEnum =
   | 'internal___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
+  | 'childMarkdownRemark___frontmatter___company'
+  | 'childMarkdownRemark___frontmatter___date___start'
+  | 'childMarkdownRemark___frontmatter___date___end'
+  | 'childMarkdownRemark___frontmatter___role'
+  | 'childMarkdownRemark___frontmatter___overview'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -817,6 +822,11 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
+  | 'frontmatter___company'
+  | 'frontmatter___date___start'
+  | 'frontmatter___date___end'
+  | 'frontmatter___role'
+  | 'frontmatter___overview'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -938,10 +948,42 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  date?: Maybe<MarkdownRemarkFrontmatterDate>;
+  role?: Maybe<Scalars['String']>;
+  overview?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterDate = {
+  start?: Maybe<Scalars['Date']>;
+  end?: Maybe<Scalars['Date']>;
+};
+
+export type MarkdownRemarkFrontmatterDateStartArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterDateEndArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterDateFilterInput = {
+  start?: Maybe<DateQueryOperatorInput>;
+  end?: Maybe<DateQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  company?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<MarkdownRemarkFrontmatterDateFilterInput>;
+  role?: Maybe<StringQueryOperatorInput>;
+  overview?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
