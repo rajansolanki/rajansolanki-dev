@@ -1,3 +1,7 @@
+type PartialNullable<T> = {
+  [K in keyof T]: T[K] | null | undefined;
+};
+
 declare module '@bit/rajansolanki.dev.load-more' {
   import setup from '@bit/rajansolanki.dev.load-more/dist/index';
 

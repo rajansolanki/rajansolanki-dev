@@ -2136,6 +2136,46 @@ export type CodeExampleQuery = {
   markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
 };
 
+export type ProjectAbsolutelyQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ProjectAbsolutelyQuery = {
+  markdownRemark?: Maybe<
+    Pick<MarkdownRemark, 'html'> & {
+      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
+    }
+  >;
+};
+
+export type ProjectHkfdQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ProjectHkfdQuery = {
+  markdownRemark?: Maybe<
+    Pick<MarkdownRemark, 'html'> & {
+      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
+    }
+  >;
+};
+
+export type ProjectLauraLeaQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ProjectLauraLeaQuery = {
+  markdownRemark?: Maybe<
+    Pick<MarkdownRemark, 'html'> & {
+      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
+    }
+  >;
+};
+
+export type ProjectViqQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ProjectViqQuery = {
+  markdownRemark?: Maybe<
+    Pick<MarkdownRemark, 'html'> & {
+      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
+    }
+  >;
+};
+
 export type CodeHoverQueryVariables = Exact<{ [key: string]: never }>;
 
 export type CodeHoverQuery = {
