@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { Intro } from 'components';
+import { Layout } from 'components';
 import HKFD from './hkfd';
 
 jest.mock('gatsby', () => ({
@@ -18,7 +18,12 @@ jest.mock('gatsby', () => ({
 }));
 
 jest.mock('components', () => ({
-  Intro: jest.fn().mockReturnValue(<div>IntroComponent</div>),
+  Layout: jest.fn().mockImplementation(({ children }) => (
+    <div>
+      <div>LayoutComponent</div>
+      {children}
+    </div>
+  )),
 }));
 
 beforeEach(jest.clearAllMocks);
@@ -27,14 +32,14 @@ afterEach(expect.hasAssertions);
 describe('`HKFD`', () => {
   beforeEach(setupTest);
 
-  describe('`Intro`', () => {
+  describe('`Layout`', () => {
     it('should be displayed', () => {
-      expect(Page.Intro).toBeTruthy();
+      expect(Page.Layout).toBeTruthy();
     });
 
     it('should pass props', () => {
-      expect(Intro).toHaveBeenCalledWith(
-        { title: 'title', role: 'role', description: 'html' },
+      expect(Layout).toHaveBeenCalledWith(
+        { projectTitle: 'HKFD', children: expect.anything() },
         {}
       );
     });
@@ -42,8 +47,8 @@ describe('`HKFD`', () => {
 });
 
 class Page {
-  static get Intro(): HTMLElement {
-    return screen.getByText('IntroComponent');
+  static get Layout(): HTMLElement {
+    return screen.getByText('LayoutComponent');
   }
 }
 

@@ -1,5 +1,5 @@
 type PartialNullable<T> = {
-  [K in keyof T]: T[K] | null | undefined;
+  [K in keyof T]?: PartialNullable<T[K]> | null;
 };
 
 declare module '@bit/rajansolanki.dev.load-more' {
