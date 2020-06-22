@@ -2169,12 +2169,6 @@ export type AllJobProjectsQuery = {
   projects: { group: Array<{ edges: Array<ProjectEdgeFragment> }> };
 };
 
-export type CodeExampleQueryVariables = Exact<{ [key: string]: never }>;
-
-export type CodeExampleQuery = {
-  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
-};
-
 export type CodeHoverQueryVariables = Exact<{ [key: string]: never }>;
 
 export type CodeHoverQuery = {
