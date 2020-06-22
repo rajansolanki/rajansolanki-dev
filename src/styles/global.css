@@ -1,4 +1,5 @@
 :root {
+  --white: #fff;
   --white-text: #fff;
   --grey-light-text: #808595;
   --grey-medium: #c8c8ce;
@@ -19,6 +20,11 @@ body {
   font-style: normal;
   line-height: 1.4;
   color: var(--grey-light-text);
+}
+
+main {
+  overflow: hidden;
+  background: var(--white);
 }
 
 h1,

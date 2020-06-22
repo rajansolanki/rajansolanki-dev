@@ -2165,8 +2165,8 @@ export type ProjectEdgeFragment = {
 export type AllJobProjectsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type AllJobProjectsQuery = {
-  projects: { group: Array<{ edges: Array<ProjectEdgeFragment> }> };
   jobs: { edges: Array<JobEdgeFragment> };
+  projects: { group: Array<{ edges: Array<ProjectEdgeFragment> }> };
 };
 
 export type CodeExampleQueryVariables = Exact<{ [key: string]: never }>;

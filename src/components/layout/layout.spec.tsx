@@ -23,6 +23,9 @@ jest.mock('./intro/intro', () => ({
 jest.mock('./job/job', () => ({
   Job: jest.fn().mockReturnValue(<div>JobComponent</div>),
 }));
+jest.mock('./footer/footer', () => ({
+  Footer: jest.fn().mockReturnValue(<div>FooterComponent</div>),
+}));
 jest.mock('./link/link', () => ({
   Link: jest.fn().mockReturnValue(<div>LinkComponent</div>),
 }));
@@ -388,6 +391,36 @@ describe('`Layout`', () => {
         });
       });
     });
+
+    describe('`Footer`', () => {
+      describe('Has next project', () => {
+        beforeEach(() =>
+          comp.rerender(
+            <Layout projectTitle="job1-project2-title">
+              <div data-testid="children">Content</div>
+            </Layout>
+          )
+        );
+
+        it('should not be displayed', () => {
+          expect(Page.Footer).toBeFalsy();
+        });
+      });
+
+      describe('No next project', () => {
+        beforeEach(() =>
+          comp.rerender(
+            <Layout projectTitle="job2-project2-title">
+              <div data-testid="children">Content</div>
+            </Layout>
+          )
+        );
+
+        it('should be displayed', () => {
+          expect(Page.Footer).toBeTruthy();
+        });
+      });
+    });
   });
 });
 
@@ -402,6 +435,10 @@ class Page {
 
   static get Job(): HTMLElement | null {
     return screen.queryByText('JobComponent');
+  }
+
+  static get Footer(): HTMLElement | null {
+    return screen.queryByText('FooterComponent');
   }
 
   static get Link(): HTMLElement | null {
