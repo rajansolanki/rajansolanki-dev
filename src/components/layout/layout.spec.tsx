@@ -29,6 +29,9 @@ jest.mock('./footer/footer', () => ({
 jest.mock('./header/header', () => ({
   Header: jest.fn().mockReturnValue(<div>HeaderComponent</div>),
 }));
+jest.mock('./head/head', () => ({
+  Head: jest.fn().mockReturnValue(<div>HeadComponent</div>),
+}));
 jest.mock('./link/link', () => ({
   Link: jest.fn().mockReturnValue(<div>LinkComponent</div>),
 }));
@@ -248,6 +251,10 @@ describe('`Layout`', () => {
   });
 
   describe('Template', () => {
+    it('should display `Head`', () => {
+      expect(Page.Head).toBeTruthy();
+    });
+
     it('should render children', () => {
       expect(Page.children).toHaveTextContent('Content');
     });
@@ -460,6 +467,10 @@ describe('`Layout`', () => {
 class Page {
   static get children(): HTMLElement {
     return screen.getByTestId('children');
+  }
+
+  static get Head(): HTMLElement | null {
+    return screen.queryByText('HeadComponent');
   }
 
   static get Intro(): HTMLElement | null {

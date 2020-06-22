@@ -2138,6 +2138,12 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type HeadQueryVariables = Exact<{ [key: string]: never }>;
+
+export type HeadQuery = {
+  site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>;
+};
+
 export type JobFragment = Pick<MarkdownRemark, 'html'> & {
   frontmatter?: Maybe<
     Pick<MarkdownRemarkFrontmatter, 'title' | 'company'> & {
