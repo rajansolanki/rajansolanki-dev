@@ -4,6 +4,7 @@ import { InferProps, string, node } from 'prop-types';
 import { Job } from './job/job';
 import { Intro } from './intro/intro';
 import { Link } from './link/link';
+import { Footer } from './footer/footer';
 import { useDataQuery } from './layout.hooks';
 import {
   getCurrentProject,
@@ -56,7 +57,7 @@ const Layout: FC<Props> = ({ projectTitle, children }) => {
     );
   };
   const renderNext = (): ReactNode | null =>
-    nextProject && (
+    nextProject ? (
       <>
         {renderNextJob()}
         <Link
@@ -65,12 +66,14 @@ const Layout: FC<Props> = ({ projectTitle, children }) => {
           overview={nextProject?.frontmatter?.overview}
         />
       </>
+    ) : (
+      <Footer />
     );
 
   return (
     <>
       {renderIntro()}
-      {children}
+      <main>{children}</main>
       {renderNext()}
     </>
   );
