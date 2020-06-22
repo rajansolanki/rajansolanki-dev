@@ -6,6 +6,7 @@ import { Code } from 'components';
 import { Search } from './search';
 
 jest.mock('gatsby', () => ({
+  ...(jest.requireActual('gatsby') as object),
   graphql: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
     markdownRemark: {

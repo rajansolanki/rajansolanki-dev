@@ -570,8 +570,10 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___company'
   | 'childMarkdownRemark___frontmatter___date___start'
   | 'childMarkdownRemark___frontmatter___date___end'
+  | 'childMarkdownRemark___frontmatter___slug'
   | 'childMarkdownRemark___frontmatter___role'
   | 'childMarkdownRemark___frontmatter___overview'
+  | 'childMarkdownRemark___frontmatter___order'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -825,8 +827,10 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___company'
   | 'frontmatter___date___start'
   | 'frontmatter___date___end'
+  | 'frontmatter___slug'
   | 'frontmatter___role'
   | 'frontmatter___overview'
+  | 'frontmatter___order'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -950,8 +954,10 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   company?: Maybe<Scalars['String']>;
   date?: Maybe<MarkdownRemarkFrontmatterDate>;
+  slug?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
   overview?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
 };
 
 export type MarkdownRemarkFrontmatterDate = {
@@ -982,8 +988,10 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   company?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<MarkdownRemarkFrontmatterDateFilterInput>;
+  slug?: Maybe<StringQueryOperatorInput>;
   role?: Maybe<StringQueryOperatorInput>;
   overview?: Maybe<StringQueryOperatorInput>;
+  order?: Maybe<IntQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2130,50 +2138,41 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type JobFragment = Pick<MarkdownRemark, 'html'> & {
+  frontmatter?: Maybe<
+    Pick<MarkdownRemarkFrontmatter, 'title' | 'company'> & {
+      date?: Maybe<Pick<MarkdownRemarkFrontmatterDate, 'start' | 'end'>>;
+    }
+  >;
+};
+
+export type JobEdgeFragment = { node: JobFragment; next?: Maybe<JobFragment> };
+
+export type ProjectFragment = Pick<MarkdownRemark, 'html'> & {
+  frontmatter?: Maybe<
+    Pick<
+      MarkdownRemarkFrontmatter,
+      'title' | 'slug' | 'role' | 'company' | 'overview'
+    >
+  >;
+};
+
+export type ProjectEdgeFragment = {
+  node: ProjectFragment;
+  next?: Maybe<ProjectFragment>;
+};
+
+export type AllJobProjectsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type AllJobProjectsQuery = {
+  projects: { group: Array<{ edges: Array<ProjectEdgeFragment> }> };
+  jobs: { edges: Array<JobEdgeFragment> };
+};
+
 export type CodeExampleQueryVariables = Exact<{ [key: string]: never }>;
 
 export type CodeExampleQuery = {
   markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
-};
-
-export type ProjectAbsolutelyQueryVariables = Exact<{ [key: string]: never }>;
-
-export type ProjectAbsolutelyQuery = {
-  markdownRemark?: Maybe<
-    Pick<MarkdownRemark, 'html'> & {
-      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
-    }
-  >;
-};
-
-export type ProjectHkfdQueryVariables = Exact<{ [key: string]: never }>;
-
-export type ProjectHkfdQuery = {
-  markdownRemark?: Maybe<
-    Pick<MarkdownRemark, 'html'> & {
-      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
-    }
-  >;
-};
-
-export type ProjectLauraLeaQueryVariables = Exact<{ [key: string]: never }>;
-
-export type ProjectLauraLeaQuery = {
-  markdownRemark?: Maybe<
-    Pick<MarkdownRemark, 'html'> & {
-      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
-    }
-  >;
-};
-
-export type ProjectViqQueryVariables = Exact<{ [key: string]: never }>;
-
-export type ProjectViqQuery = {
-  markdownRemark?: Maybe<
-    Pick<MarkdownRemark, 'html'> & {
-      frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'role'>>;
-    }
-  >;
 };
 
 export type CodeHoverQueryVariables = Exact<{ [key: string]: never }>;

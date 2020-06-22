@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { render, screen } from '@testing-library/react';
 
-import { Code } from 'components';
+import { Code, Layout } from 'components';
 import Index from './index';
 
 jest.mock('gatsby', () => ({
@@ -18,6 +17,12 @@ jest.mock('gatsby', () => ({
 jest.mock('components', () => ({
   Code: jest.fn().mockReturnValue(<div>CodeComponent</div>),
   Text: jest.fn().mockReturnValue(<div>TextComponent</div>),
+  Layout: jest.fn().mockImplementation(({ children }) => (
+    <div>
+      <div>LayoutComponent</div>
+      {children}
+    </div>
+  )),
 }));
 
 beforeEach(jest.clearAllMocks);
@@ -28,6 +33,19 @@ describe('`Index`', () => {
 
   it('should display title', () => {
     expect(Page.title).toBeTruthy();
+  });
+
+  describe('`Layout`', () => {
+    it('should be displayed', () => {
+      expect(Page.Layout).toBeTruthy();
+    });
+
+    it('should pass props', () => {
+      expect(Layout).toHaveBeenCalledWith(
+        { projectTitle: undefined, children: expect.anything() },
+        {}
+      );
+    });
   });
 
   describe('`Code`', () => {
@@ -43,27 +61,15 @@ describe('`Index`', () => {
   it('should display `Text`', () => {
     expect(Page.Text).toBeTruthy();
   });
-
-  describe('`Link`', () => {
-    it('should be displayed', () => {
-      expect(Page.Link).toBeTruthy();
-    });
-
-    it('should pass props', () => {
-      expect(Link).toHaveBeenCalledWith(
-        {
-          to: '/projects/laura-lea',
-          children: 'Laura Lea',
-        },
-        {}
-      );
-    });
-  });
 });
 
 class Page {
   static get title(): HTMLElement {
     return screen.getByText('Hello');
+  }
+
+  static get Layout(): HTMLElement {
+    return screen.getByText('LayoutComponent');
   }
 
   static get Code(): HTMLElement {
@@ -72,10 +78,6 @@ class Page {
 
   static get Text(): HTMLElement {
     return screen.getByText('TextComponent');
-  }
-
-  static get Link(): HTMLElement {
-    return screen.getByText('Link');
   }
 }
 

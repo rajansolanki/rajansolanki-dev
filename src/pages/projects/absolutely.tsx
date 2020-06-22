@@ -1,31 +1,11 @@
 import React, { FC } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
-import { Intro } from 'components';
-import { ProjectAbsolutelyQuery } from 'graphql-types';
+import { Layout } from 'components';
 
-const Absolutely: FC = () => {
-  const { markdownRemark }: ProjectAbsolutelyQuery = useStaticQuery(graphql`
-    query ProjectAbsolutely {
-      markdownRemark(fileAbsolutePath: { glob: "**/projects/absolutely.md" }) {
-        frontmatter {
-          title
-          role
-        }
-        html
-      }
-    }
-  `);
+const projectTitle = 'Absolutely Studio';
 
-  return (
-    <>
-      <Intro
-        title={markdownRemark?.frontmatter?.title}
-        role={markdownRemark?.frontmatter?.role}
-        description={markdownRemark?.html}
-      />
-    </>
-  );
-};
+const Absolutely: FC = () => (
+  <Layout projectTitle={projectTitle}>Content</Layout>
+);
 
 export default Absolutely;

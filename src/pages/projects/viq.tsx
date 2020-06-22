@@ -1,31 +1,9 @@
 import React, { FC } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
-import { Intro } from 'components';
-import { ProjectViqQuery } from 'graphql-types';
+import { Layout } from 'components';
 
-const VIQ: FC = () => {
-  const { markdownRemark }: ProjectViqQuery = useStaticQuery(graphql`
-    query ProjectViq {
-      markdownRemark(fileAbsolutePath: { glob: "**/projects/viq.md" }) {
-        frontmatter {
-          title
-          role
-        }
-        html
-      }
-    }
-  `);
+const projectTitle = 'VIQ';
 
-  return (
-    <>
-      <Intro
-        title={markdownRemark?.frontmatter?.title}
-        role={markdownRemark?.frontmatter?.role}
-        description={markdownRemark?.html}
-      />
-    </>
-  );
-};
+const VIQ: FC = () => <Layout projectTitle={projectTitle}>Content</Layout>;
 
 export default VIQ;

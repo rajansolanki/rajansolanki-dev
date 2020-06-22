@@ -6,6 +6,7 @@ import { Code } from 'components';
 import { Hover } from './hover';
 
 jest.mock('gatsby', () => ({
+  ...(jest.requireActual('gatsby') as object),
   graphql: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
     markdownRemark: {

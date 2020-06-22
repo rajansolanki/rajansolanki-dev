@@ -1,7 +1,11 @@
 :root {
   --white-text: #fff;
   --grey-light-text: #808595;
+  --grey-medium: #c8c8ce;
+  --grey-medium-text: #8d8f9c;
   --grey-dark: #1d1f21;
+  --grey-dark-text: #232731;
+  --black: #181818;
   --black-text: #000;
 
   --ll-grey-light: #edeeef;
@@ -26,6 +30,14 @@ h4 {
 
 h1 {
   font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.3em;
 }
 
 h4 {
