@@ -26,6 +26,9 @@ jest.mock('./job/job', () => ({
 jest.mock('./footer/footer', () => ({
   Footer: jest.fn().mockReturnValue(<div>FooterComponent</div>),
 }));
+jest.mock('./header/header', () => ({
+  Header: jest.fn().mockReturnValue(<div>HeaderComponent</div>),
+}));
 jest.mock('./link/link', () => ({
   Link: jest.fn().mockReturnValue(<div>LinkComponent</div>),
 }));
@@ -290,6 +293,36 @@ describe('`Layout`', () => {
       });
     });
 
+    describe('`Header`', () => {
+      describe('Project page', () => {
+        beforeEach(() =>
+          comp.rerender(
+            <Layout projectTitle="job1-project1-title">
+              <div data-testid="children">Content</div>
+            </Layout>
+          )
+        );
+
+        it('should not be displayed', () => {
+          expect(Page.Header).toBeFalsy();
+        });
+      });
+
+      describe('Index page', () => {
+        beforeEach(() =>
+          comp.rerender(
+            <Layout>
+              <div data-testid="children">Content</div>
+            </Layout>
+          )
+        );
+
+        it('should be displayed', () => {
+          expect(Page.Header).toBeTruthy();
+        });
+      });
+    });
+
     describe('`Job`', () => {
       describe('No more jobs', () => {
         beforeEach(() =>
@@ -431,6 +464,10 @@ class Page {
 
   static get Intro(): HTMLElement | null {
     return screen.queryByText('IntroComponent');
+  }
+
+  static get Header(): HTMLElement | null {
+    return screen.queryByText('HeaderComponent');
   }
 
   static get Job(): HTMLElement | null {

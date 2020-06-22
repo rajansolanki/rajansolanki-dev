@@ -5,6 +5,7 @@ import { Job } from './job/job';
 import { Intro } from './intro/intro';
 import { Link } from './link/link';
 import { Footer } from './footer/footer';
+import { Header } from './header/header';
 import { useDataQuery } from './layout.hooks';
 import {
   getCurrentProject,
@@ -14,7 +15,7 @@ import {
 
 const propTypes = {
   projectTitle: string,
-  children: node.isRequired,
+  children: node,
 };
 type Props = InferProps<typeof propTypes>;
 
@@ -36,12 +37,14 @@ const Layout: FC<Props> = ({ projectTitle, children }) => {
   });
 
   const renderIntro = (): ReactNode | null =>
-    currentProject && (
+    currentProject ? (
       <Intro
         title={currentProject?.node?.frontmatter?.title}
         role={currentProject?.node?.frontmatter?.role}
         description={currentProject?.node?.html}
       />
+    ) : (
+      <Header />
     );
 
   const renderNextJob = (): ReactNode | null => {
