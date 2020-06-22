@@ -6,6 +6,7 @@ import { Intro } from './intro/intro';
 import { Link } from './link/link';
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
+import { Head } from './head/head';
 import { useDataQuery } from './layout.hooks';
 import {
   getCurrentProject,
@@ -75,6 +76,7 @@ const Layout: FC<Props> = ({ projectTitle, children }) => {
 
   return (
     <>
+      <Head />
       {renderIntro()}
       <main>{children}</main>
       {renderNext()}
