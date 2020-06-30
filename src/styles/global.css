@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  overflow: hidden;
+  overflow: visible;
   background: var(--white);
 }
 

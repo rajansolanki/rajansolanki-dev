@@ -7,6 +7,7 @@ export const LoadMore = styled.div`
 
   component-loading-bar {
     position: sticky;
+    z-index: 9;
   }
 `;
 

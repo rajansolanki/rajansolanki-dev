@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
-export const Banner = styled.div`
-  overflow: auto;
+export const Error = styled.div`
+  overflow: visible;
   position: relative;
   min-height: 100vh;
   padding: 10vh 0;
@@ -10,6 +10,7 @@ export const Banner = styled.div`
     position: fixed;
     left: 0;
     right: 0;
+    z-index: 8;
   }
 `;
 
