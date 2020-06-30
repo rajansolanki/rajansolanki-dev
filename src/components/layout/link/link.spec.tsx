@@ -1,22 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { Timeline } from '../layout.styles';
 import { Link } from './link';
-
-jest.mock('../layout.styles', () => ({
-  Timeline: jest.fn().mockReturnValue(null),
-}));
 
 beforeEach(jest.clearAllMocks);
 afterEach(expect.hasAssertions);
 
 describe('`Link`', () => {
   beforeEach(setupTest);
-
-  it('should call `Timeline` with props', () => {
-    expect(Timeline).toHaveBeenCalledWith({ type: 'project' }, {});
-  });
 
   describe('Template', () => {
     describe('Link', () => {

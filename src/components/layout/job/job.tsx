@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { InferProps, string, shape } from 'prop-types';
 
-import { Timeline } from '../layout.styles';
 import { Job as JobStyled, JobMeta, JobDescription } from './job.styles';
 
 const propTypes = {
@@ -20,22 +19,19 @@ const Job: FC<Props> = ({ company, date, title, description }) => {
 
   return (
     <JobStyled>
-      <Timeline type="job" />
-      <div>
-        <JobMeta>
-          <h2>{company}</h2>
-          <p>
-            {renderDate()}
-            <br />
-            {title}
-          </p>
-        </JobMeta>
-        <JobDescription
-          dangerouslySetInnerHTML={{
-            __html: description || '',
-          }}
-        />
-      </div>
+      <JobMeta>
+        <h2>{company}</h2>
+        <p>
+          {renderDate()}
+          <br />
+          {title}
+        </p>
+      </JobMeta>
+      <JobDescription
+        dangerouslySetInnerHTML={{
+          __html: description || '',
+        }}
+      />
     </JobStyled>
   );
 };

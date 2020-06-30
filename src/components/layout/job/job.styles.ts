@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 
+import { CONTAINER } from 'styles';
+
 export const Job = styled.div`
-  display: flex;
+  ${CONTAINER}
 
   h2 {
     margin: 0;

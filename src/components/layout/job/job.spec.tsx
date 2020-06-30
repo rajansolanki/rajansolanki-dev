@@ -1,12 +1,7 @@
 import React from 'react';
 import { render, screen, RenderResult } from '@testing-library/react';
 
-import { Timeline } from '../layout.styles';
 import { Job } from './job';
-
-jest.mock('../layout.styles', () => ({
-  Timeline: jest.fn().mockReturnValue(null),
-}));
 
 let comp: RenderResult;
 
@@ -15,10 +10,6 @@ afterEach(expect.hasAssertions);
 
 describe('`Job`', () => {
   beforeEach(setupTest);
-
-  it('should call `Timeline` with props', () => {
-    expect(Timeline).toHaveBeenCalledWith({ type: 'job' }, {});
-  });
 
   describe('Template', () => {
     it('should display `company`', () => {
