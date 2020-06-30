@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 import { Link as GatsbyLink } from 'gatsby';
 
-import { GRID } from 'styles';
+import { GRID, CONTAINER } from 'styles';
 
 export const Link = styled(GatsbyLink)`
-  display: flex;
+  overflow: hidden;
+  display: block;
   padding: 0;
   background: var(--grey-dark);
   color: var(--grey-medium-text);
@@ -25,11 +26,11 @@ export const Link = styled(GatsbyLink)`
 `;
 
 export const Project = styled.div`
+  ${CONTAINER}
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   margin: 5vh 0;
 `;
 

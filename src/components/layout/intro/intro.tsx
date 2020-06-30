@@ -7,7 +7,6 @@ import {
   ProjectMeta,
   ProjectDescription,
 } from './intro.styles';
-import { Timeline } from '../layout.styles';
 
 const propTypes = {
   title: string.isRequired,
@@ -19,7 +18,6 @@ type Props = PartialNullable<InferProps<typeof propTypes>>;
 const Intro: FC<Props> = ({ title, role, description }) => {
   return (
     <IntroStyled>
-      <Timeline type="project" />
       <Project>
         <ProjectMeta>
           <h1>{title}</h1>
