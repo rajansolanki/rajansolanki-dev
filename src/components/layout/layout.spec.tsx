@@ -4,6 +4,7 @@ import { render, screen, RenderResult } from '@testing-library/react';
 import { Job } from './job/job';
 import { Intro } from './intro/intro';
 import { Link } from './link/link';
+import { Head } from './head/head';
 import { useDataQuery } from './layout.hooks';
 import * as LayoutHelpers from './layout.helpers';
 import {
@@ -251,12 +252,18 @@ describe('`Layout`', () => {
   });
 
   describe('Template', () => {
-    it('should display `Head`', () => {
-      expect(Page.Head).toBeTruthy();
-    });
-
     it('should render children', () => {
       expect(Page.children).toHaveTextContent('Content');
+    });
+
+    describe('`Head`', () => {
+      it('should be displayed', () => {
+        expect(Page.Head).toBeTruthy();
+      });
+
+      it('should pass props', () => {
+        expect(Head).toHaveBeenCalledWith({ title: 'job1-project1-title' }, {});
+      });
     });
 
     describe('`Intro`', () => {
