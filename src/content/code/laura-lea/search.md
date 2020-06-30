@@ -1,8 +1,14 @@
-```typescript
-export const getImageWidth = (): number => {
-  const width = window.innerWidth;
-  if (!width || width < IMAGE_XS) return IMAGE_XS;
-
-  return Math.ceil(width / 100) * 100;
-};
+```ts
+class ProductsComponent {
+  private getQueryData(
+    query: string
+  ): Observable<
+    [ApolloQueryResult<ProductsQuery>, ApolloQueryResult<ProductTagsQuery>]
+  > {
+    return combineLatest([
+      this.getProducts(query),
+      this.getProductTags(query),
+    ]).pipe(takeUntil(this.search$.pipe(skip(1))));
+  }
+}
 ```

@@ -7,4 +7,6 @@ overview: Studio website
 order: 1
 ---
 
-Studio website
+Absolutely Studio is a multi-disciplined design studio.
+
+The brief was to design and build a studio website.

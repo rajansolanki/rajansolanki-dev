@@ -9,8 +9,11 @@ jest.mock('gatsby', () => ({
   ...(jest.requireActual('gatsby') as object),
   graphql: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
-    markdownRemark: {
-      html: 'html',
+    masonrySet: {
+      html: 'masonrySetHtml',
+    },
+    masonryCache: {
+      html: 'masonryCacheHtml',
     },
   }),
 }));
@@ -50,11 +53,12 @@ describe('`Masonry`', () => {
 
     describe('`Code`', () => {
       it('should be displayed', () => {
-        expect(Page.Code).toBeTruthy();
+        expect(Page.Code).toHaveLength(2);
       });
 
       it('should pass props', () => {
-        expect(Code).toHaveBeenCalledWith({ code: 'html' }, {});
+        expect(Code).toHaveBeenCalledWith({ code: 'masonrySetHtml' }, {});
+        expect(Code).toHaveBeenCalledWith({ code: 'masonryCacheHtml' }, {});
       });
     });
 
@@ -70,11 +74,11 @@ class Page {
   }
 
   static get text(): HTMLElement {
-    return screen.getByText(/products page/);
+    return screen.getByText(/The first challenge/);
   }
 
-  static get Code(): HTMLElement {
-    return screen.getByText('CodeComponent');
+  static get Code(): HTMLElement[] {
+    return screen.getAllByText('CodeComponent');
   }
 
   static get masonryComponent(): HTMLElement | null {

@@ -14,5 +14,8 @@ export const Banner = styled.div`
 `;
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 50vh;
 `;

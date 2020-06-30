@@ -45,8 +45,14 @@ const LoadMore: FC = () => {
       <component-loading-bar status={status} />
 
       <Container>
-        <Text heading="Pagination errors">
-          <p>Loading errors are handled within the component itself</p>
+        <Text>
+          <p>
+            Error states at delivered at the component level, which can then
+            decide whether to handle the error itself, or delegate it to
+            `BannerService`. Load more, variant, and product fetch errors are
+            handled by the components themselves, since they offer the most
+            logical placement.
+          </p>
         </Text>
 
         <ComponentContainer ref={visibleRef}>

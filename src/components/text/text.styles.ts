@@ -3,7 +3,13 @@ import styled from '@emotion/styled';
 import { GRID, PADDING } from 'styles';
 
 export const Text = styled.div`
+  width: 100%;
   margin: 10vh 0;
+
+  ol,
+  ul {
+    margin: 0 2em;
+  }
 `;
 
 export const Container = styled.div`

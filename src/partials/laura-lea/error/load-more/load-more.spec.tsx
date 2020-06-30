@@ -29,7 +29,6 @@ describe('`LoadMore`', () => {
 
   describe('Template', () => {
     it('should display text', () => {
-      expect(Page.heading).toBeTruthy();
       expect(Page.text).toBeTruthy();
     });
 
@@ -93,12 +92,8 @@ describe('`LoadMore`', () => {
 });
 
 class Page {
-  static get heading(): HTMLElement {
-    return screen.getByRole('heading');
-  }
-
   static get text(): HTMLElement {
-    return screen.getByText(/Loading errors/);
+    return screen.getByText(/Error states/);
   }
 
   static get loadingBarComponent(): HTMLElement | null {

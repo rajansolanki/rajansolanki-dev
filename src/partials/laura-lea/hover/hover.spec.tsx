@@ -9,8 +9,8 @@ jest.mock('gatsby', () => ({
   ...(jest.requireActual('gatsby') as object),
   graphql: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
-    markdownRemark: {
-      html: 'html',
+    hover: {
+      html: 'hoverHtml',
     },
   }),
 }));
@@ -55,7 +55,7 @@ describe('`Hover`', () => {
 
       it('should pass props', () => {
         expect(Code).toHaveBeenCalledWith(
-          { code: 'html', className: expect.any(String) },
+          { code: 'hoverHtml', className: expect.any(String) },
           {}
         );
       });
@@ -73,7 +73,7 @@ class Page {
   }
 
   static get text(): HTMLElement {
-    return screen.getByText(/interactions around/);
+    return screen.getByText(/A small detail/);
   }
 
   static get Code(): HTMLElement {

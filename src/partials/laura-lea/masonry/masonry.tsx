@@ -9,9 +9,16 @@ import { Container } from './masonry.styles';
 const masonryComponent = import('@bit/rajansolanki.dev.masonry');
 
 const Masonry: FC = () => {
-  const codeMasonryData: CodeMasonryQuery = useStaticQuery(graphql`
+  const { masonrySet, masonryCache }: CodeMasonryQuery = useStaticQuery(graphql`
     query CodeMasonry {
-      markdownRemark(fileAbsolutePath: { glob: "**/laura-lea/masonry.md" }) {
+      masonrySet: markdownRemark(
+        fileAbsolutePath: { glob: "**/laura-lea/masonry-set.md" }
+      ) {
+        html
+      }
+      masonryCache: markdownRemark(
+        fileAbsolutePath: { glob: "**/laura-lea/masonry-cache.md" }
+      ) {
         html
       }
     }
@@ -24,14 +31,31 @@ const Masonry: FC = () => {
   return (
     <div>
       <Text heading="Masonry">
-        <p ref={visibleRef}>The products page</p>
+        <p ref={visibleRef}>
+          The first challenge was producing a layout that could showcase a large
+          number of images. A masonry layout seemed like the best fit, but
+          existing solutions fell short. A CSS only layout was too rigid, and JS
+          based layouts were either not performant, or did not work well with
+          pagination.
+        </p>
+        <p>
+          A hybrid masonry/grid solution was created, that utilised CSS Grid and
+          dynamically calculated `span`s.
+        </p>
       </Text>
-
-      <Code code={codeMasonryData.markdownRemark?.html} />
 
       <Container>
         <component-masonry />
       </Container>
+
+      <Code code={masonrySet?.html} />
+      <Text>
+        <p>
+          The index-based cache ensures that as products are added and removed,
+          they maintain their dimensions and the layout is not recalculated.
+        </p>
+      </Text>
+      <Code code={masonryCache?.html} />
     </div>
   );
 };
