@@ -76,7 +76,7 @@ const Layout: FC<Props> = ({ projectTitle, children }) => {
 
   return (
     <>
-      <Head />
+      <Head title={projectTitle} />
       {renderIntro()}
       <main>{children}</main>
       {renderNext()}
