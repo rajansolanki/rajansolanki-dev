@@ -6,13 +6,13 @@ context('Laura Lea', () => {
     loadMoreHexagon: 'component-load-more svg',
     loadMoreButton: 'component-load-more button',
     error: 'component-error > .banner',
-    errorAppText: 'component-error + div',
-    errorGlobalText: 'component-error + div',
+    errorAppText: 'uses a banner',
+    errorGlobalText: 'global error banner',
     masonryText: 'Masonry',
     masonry: 'component-masonry img',
     hoverText: 'Hover',
     hover: 'component-hover a',
-    cartText: 'Cart',
+    cartText: 'Cache',
     cart: 'component-cart > app-content',
     cartItemsCount: 'component-cart #items-count',
     cartItems: 'component-cart app-cart-item',
@@ -27,7 +27,7 @@ context('Laura Lea', () => {
     searchAutocomplete: 'component-search component-autocomplete',
     searchAutocompleteOptions:
       'component-search component-autocomplete component-option',
-    slideText: 'Slide',
+    slideText: '@client',
     slide: 'component-slide > div',
     slideVariantSelect: 'component-slide select',
     slideImageContainer: 'component-slide component-image > div',
@@ -86,20 +86,20 @@ context('Laura Lea', () => {
     cy.get(elements.loadMoreHexagon).should('be.visible');
 
     cy.get(elements.error).should('not.exist');
-    cy.get(elements.errorAppText).scrollIntoView({
+    cy.contains(elements.errorAppText).scrollIntoView({
       offset: { top: -200, left: 0 },
     });
     cy.get(elements.error)
       .should('be.visible')
       .and('contain.text', 'load products');
-    cy.get(elements.errorGlobalText).scrollIntoView({
-      offset: { top: 100, left: 0 },
+    cy.contains(elements.errorGlobalText).scrollIntoView({
+      offset: { top: -200, left: 0 },
     });
     cy.get(elements.error)
       .should('be.visible')
       .and('contain.text', 'an error occurred');
-    cy.get(elements.errorGlobalText).scrollIntoView({
-      offset: { top: 500, left: 0 },
+    cy.contains(elements.errorGlobalText).scrollIntoView({
+      offset: { top: 0, left: 0 },
     });
     cy.get(elements.error).should('not.be.visible');
   });
@@ -133,7 +133,9 @@ context('Laura Lea', () => {
 
   it('should display slide', () => {
     cy.get(elements.slide).should('not.exist');
-    cy.contains(elements.slideText).scrollIntoView();
+    cy.contains(elements.slideText).scrollIntoView({
+      offset: { top: -100, left: 0 },
+    });
     cy.get(elements.slide).should('be.visible');
     cy.get(elements.slideVariantSelect)
       .and('contain', 'Blue')

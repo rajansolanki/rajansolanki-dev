@@ -9,8 +9,11 @@ jest.mock('gatsby', () => ({
   ...(jest.requireActual('gatsby') as object),
   graphql: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
-    markdownRemark: {
-      html: 'html',
+    slideQuery: {
+      html: 'slideQueryHtml',
+    },
+    slideResolver: {
+      html: 'slideResolverHtml',
     },
   }),
 }));
@@ -44,18 +47,22 @@ describe('`Slide`', () => {
 
   describe('Template', () => {
     it('should display text', () => {
-      expect(Page.heading).toHaveTextContent('Slide');
+      expect(Page.heading).toHaveTextContent('Cache');
       expect(Page.text).toBeTruthy();
     });
 
     describe('`Code`', () => {
       it('should be displayed', () => {
-        expect(Page.Code).toBeTruthy();
+        expect(Page.Code).toHaveLength(2);
       });
 
       it('should pass props', () => {
         expect(Code).toHaveBeenCalledWith(
-          { code: 'html', className: expect.any(String) },
+          { code: 'slideQueryHtml', className: expect.any(String) },
+          {}
+        );
+        expect(Code).toHaveBeenCalledWith(
+          { code: 'slideResolverHtml', className: expect.any(String) },
           {}
         );
       });
@@ -73,11 +80,11 @@ class Page {
   }
 
   static get text(): HTMLElement {
-    return screen.getByText(/slider/);
+    return screen.getByText(/The structure/);
   }
 
-  static get Code(): HTMLElement {
-    return screen.getByText('CodeComponent');
+  static get Code(): HTMLElement[] {
+    return screen.getAllByText('CodeComponent');
   }
 
   static get slideComponent(): HTMLElement | null {

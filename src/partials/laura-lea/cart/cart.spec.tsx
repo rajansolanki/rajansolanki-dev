@@ -2,11 +2,26 @@ import React from 'react';
 import { render, screen, RenderResult } from '@testing-library/react';
 
 import { useVisible, useComponent } from 'shared';
+import { Code } from 'components';
 import { Cart } from './cart';
+
+jest.mock('gatsby', () => ({
+  ...(jest.requireActual('gatsby') as object),
+  graphql: jest.fn(),
+  useStaticQuery: jest.fn().mockReturnValue({
+    cart: {
+      html: 'cartHtml',
+    },
+  }),
+}));
 
 jest.mock('shared', () => ({
   useVisible: jest.fn().mockReturnValue([() => undefined, false]),
   useComponent: jest.fn(),
+}));
+jest.mock('components', () => ({
+  ...(jest.requireActual('components') as object),
+  Code: jest.fn().mockReturnValue(<div>CodeComponent</div>),
 }));
 
 let comp: RenderResult;
@@ -33,6 +48,16 @@ describe('`Cart`', () => {
       expect(Page.text).toBeTruthy();
     });
 
+    describe('`Code`', () => {
+      it('should be displayed', () => {
+        expect(Page.Code).toBeTruthy();
+      });
+
+      it('should pass props', () => {
+        expect(Code).toHaveBeenCalledWith({ code: 'cartHtml' }, {});
+      });
+    });
+
     it('should display cart component', () => {
       expect(Page.cartComponent).toBeTruthy();
     });
@@ -45,7 +70,11 @@ class Page {
   }
 
   static get text(): HTMLElement {
-    return screen.getByText(/Optimistic response/);
+    return screen.getByText(/A key part/);
+  }
+
+  static get Code(): HTMLElement {
+    return screen.getByText('CodeComponent');
   }
 
   static get cartComponent(): HTMLElement | null {

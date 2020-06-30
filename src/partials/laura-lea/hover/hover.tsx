@@ -9,9 +9,11 @@ import { Container, Code } from './hover.styles';
 const hoverComponent = import('@bit/rajansolanki.dev.hover');
 
 const Hover: FC = () => {
-  const codeHoverData: CodeHoverQuery = useStaticQuery(graphql`
+  const { hover }: CodeHoverQuery = useStaticQuery(graphql`
     query CodeHover {
-      markdownRemark(fileAbsolutePath: { glob: "**/laura-lea/hover.md" }) {
+      hover: markdownRemark(
+        fileAbsolutePath: { glob: "**/laura-lea/hover.md" }
+      ) {
         html
       }
     }
@@ -24,12 +26,20 @@ const Hover: FC = () => {
   return (
     <div>
       <Text heading="Hover">
-        <p ref={visibleRef}>The interactions around the cart</p>
+        <p ref={visibleRef}>
+          A small detail we added to the design of the shopping experience was
+          the effect on the buy and checkout buttons.
+        </p>
+        <p>
+          Since these listeners do not do any blocking work, they are attached
+          manually as `passive` event listeners, instead of utilising
+          Angular&rsquo;s `@HostListener` directive.
+        </p>
       </Text>
 
       <Container>
         <component-hover />
-        <Code code={codeHoverData.markdownRemark?.html} />
+        <Code code={hover?.html} />
       </Container>
     </div>
   );

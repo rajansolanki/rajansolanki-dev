@@ -2,11 +2,32 @@ import React from 'react';
 import { render, screen, RenderResult } from '@testing-library/react';
 
 import { useVisible, useComponent } from 'shared';
+import { Code } from 'components';
 import { Banner } from './banner';
+
+jest.mock('gatsby', () => ({
+  ...(jest.requireActual('gatsby') as object),
+  graphql: jest.fn(),
+  useStaticQuery: jest.fn().mockReturnValue({
+    bannerDisplay: {
+      html: 'bannerDisplayHtml',
+    },
+    bannerCatch: {
+      html: 'bannerCatchHtml',
+    },
+    bannerStream: {
+      html: 'bannerStreamHtml',
+    },
+  }),
+}));
 
 jest.mock('shared', () => ({
   useVisible: jest.fn().mockReturnValue([() => undefined, false]),
   useComponent: jest.fn(),
+}));
+jest.mock('components', () => ({
+  ...(jest.requireActual('components') as object),
+  Code: jest.fn().mockReturnValue(<div>CodeComponent</div>),
 }));
 
 let comp: RenderResult;
@@ -32,9 +53,21 @@ describe('`Banner`', () => {
 
   describe('Template', () => {
     it('should display text', () => {
-      expect(Page.headings).toHaveLength(2);
+      expect(Page.heading).toHaveTextContent('Errors');
       expect(Page.appText).toBeTruthy();
       expect(Page.globalText).toBeTruthy();
+    });
+
+    describe('`Code`', () => {
+      it('should be displayed', () => {
+        expect(Page.Code).toHaveLength(3);
+      });
+
+      it('should pass props', () => {
+        expect(Code).toHaveBeenCalledWith({ code: 'bannerDisplayHtml' }, {});
+        expect(Code).toHaveBeenCalledWith({ code: 'bannerCatchHtml' }, {});
+        expect(Code).toHaveBeenCalledWith({ code: 'bannerStreamHtml' }, {});
+      });
     });
 
     describe('Error component', () => {
@@ -68,16 +101,20 @@ describe('`Banner`', () => {
 });
 
 class Page {
-  static get headings(): HTMLElement[] {
-    return screen.getAllByRole('heading');
+  static get heading(): HTMLElement {
+    return screen.getByRole('heading');
   }
 
   static get appText(): HTMLElement {
-    return screen.getByText(/Errors that affect/);
+    return screen.getByText(/Since the concept/);
   }
 
   static get globalText(): HTMLElement {
-    return screen.getByText(/If things go/);
+    return screen.getByText(/If things were/);
+  }
+
+  static get Code(): HTMLElement[] {
+    return screen.getAllByText('CodeComponent');
   }
 
   static get errorComponent(): HTMLElement | null {

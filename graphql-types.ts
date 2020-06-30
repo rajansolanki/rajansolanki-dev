@@ -2175,26 +2175,61 @@ export type AllJobProjectsQuery = {
   projects: { group: Array<{ edges: Array<ProjectEdgeFragment> }> };
 };
 
+export type AbsolutelyCodeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type AbsolutelyCodeQuery = {
+  inputSet?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  revealStyles?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  contentEditable?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  reactAnimations?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  reactForm?: Maybe<Pick<MarkdownRemark, 'html'>>;
+};
+
+export type HkfdCodeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type HkfdCodeQuery = {
+  types?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  template?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  server?: Maybe<Pick<MarkdownRemark, 'html'>>;
+};
+
+export type ViqCodeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type ViqCodeQuery = {
+  sleep?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  visible?: Maybe<Pick<MarkdownRemark, 'html'>>;
+};
+
+export type CodeCartQueryVariables = Exact<{ [key: string]: never }>;
+
+export type CodeCartQuery = { cart?: Maybe<Pick<MarkdownRemark, 'html'>> };
+
+export type CodeBannerQueryVariables = Exact<{ [key: string]: never }>;
+
+export type CodeBannerQuery = {
+  bannerDisplay?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  bannerCatch?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  bannerStream?: Maybe<Pick<MarkdownRemark, 'html'>>;
+};
+
 export type CodeHoverQueryVariables = Exact<{ [key: string]: never }>;
 
-export type CodeHoverQuery = {
-  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
-};
+export type CodeHoverQuery = { hover?: Maybe<Pick<MarkdownRemark, 'html'>> };
 
 export type CodeMasonryQueryVariables = Exact<{ [key: string]: never }>;
 
 export type CodeMasonryQuery = {
-  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  masonrySet?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  masonryCache?: Maybe<Pick<MarkdownRemark, 'html'>>;
 };
 
 export type CodeSearchQueryVariables = Exact<{ [key: string]: never }>;
 
-export type CodeSearchQuery = {
-  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
-};
+export type CodeSearchQuery = { search?: Maybe<Pick<MarkdownRemark, 'html'>> };
 
 export type CodeSlideQueryVariables = Exact<{ [key: string]: never }>;
 
 export type CodeSlideQuery = {
-  markdownRemark?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  slideQuery?: Maybe<Pick<MarkdownRemark, 'html'>>;
+  slideResolver?: Maybe<Pick<MarkdownRemark, 'html'>>;
 };

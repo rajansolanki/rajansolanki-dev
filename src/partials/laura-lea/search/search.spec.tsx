@@ -9,8 +9,8 @@ jest.mock('gatsby', () => ({
   ...(jest.requireActual('gatsby') as object),
   graphql: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
-    markdownRemark: {
-      html: 'html',
+    search: {
+      html: 'searchHtml',
     },
   }),
 }));
@@ -54,7 +54,7 @@ describe('`Search`', () => {
       });
 
       it('should pass props', () => {
-        expect(Code).toHaveBeenCalledWith({ code: 'html' }, {});
+        expect(Code).toHaveBeenCalledWith({ code: 'searchHtml' }, {});
       });
     });
 
@@ -70,7 +70,7 @@ class Page {
   }
 
   static get text(): HTMLElement {
-    return screen.getByText(/The layout/);
+    return screen.getByText(/To avoid/);
   }
 
   static get Code(): HTMLElement {

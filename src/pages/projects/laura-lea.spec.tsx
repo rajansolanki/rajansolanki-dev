@@ -4,20 +4,8 @@ import { render, screen } from '@testing-library/react';
 import { Layout } from 'components';
 import LauraLea from './laura-lea';
 
-jest.mock('gatsby', () => ({
-  graphql: jest.fn(),
-  useStaticQuery: jest.fn().mockReturnValue({
-    markdownRemark: {
-      frontmatter: {
-        title: 'title',
-        role: 'role',
-      },
-      html: 'html',
-    },
-  }),
-}));
-
 jest.mock('components', () => ({
+  ...(jest.requireActual('components') as object),
   Layout: jest.fn().mockImplementation(({ children }) => (
     <div>
       <div>LayoutComponent</div>
@@ -39,6 +27,10 @@ afterEach(expect.hasAssertions);
 
 describe('`LauraLea`', () => {
   beforeEach(setupTest);
+
+  it('should display text', () => {
+    expect(Page.text).toBeTruthy();
+  });
 
   describe('`Layout`', () => {
     it('should be displayed', () => {
@@ -64,6 +56,10 @@ describe('`LauraLea`', () => {
 });
 
 class Page {
+  static get text(): HTMLElement {
+    return screen.getByText(/Shopify was/);
+  }
+
   static get Layout(): HTMLElement {
     return screen.getByText('LayoutComponent');
   }
