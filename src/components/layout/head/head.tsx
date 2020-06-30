@@ -50,6 +50,11 @@ const Head: FC<Props> = ({ title }) => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
       <meta name="msapplication-TileColor" content="#ffc40d" />
       <meta name="theme-color" content="#ffffff" />
+
+      <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400&family=Roboto+Mono:wght@400&display=swap"
+        rel="stylesheet"
+      />
     </Helmet>
   );
 };

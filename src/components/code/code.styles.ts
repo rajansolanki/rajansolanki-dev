@@ -20,8 +20,9 @@ export const Code = styled.div`
 
   code,
   pre {
-    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier,
-      monospace;
+    font-family: 'Roboto Mono', Inconsolata, Monaco, Consolas, 'Courier New',
+      Courier, monospace;
+    font-weight: 400;
     text-align: left;
     color: #c5c8c6;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);

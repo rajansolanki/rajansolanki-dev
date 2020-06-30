@@ -14,7 +14,8 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Heebo, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   font-style: normal;
