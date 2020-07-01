@@ -40,15 +40,10 @@ const Error: FC = () => {
 
   const [appVisibleRef, appIsVisible] = useVisible();
   const [globalVisibleRef, globalIsVisible] = useVisible();
-  const [endRef, endIsVisible] = useVisible();
 
   useEffect(() => {
     globalIsVisible && setErrorType('global');
   }, [globalIsVisible]);
-
-  useEffect(() => {
-    endIsVisible && setErrorType(undefined);
-  }, [endIsVisible]);
 
   useComponent(errorComponent, appIsVisible);
 
@@ -101,8 +96,6 @@ const Error: FC = () => {
           </p>
         </Text>
       </Container>
-
-      <div ref={endRef} style={{ marginTop: '50vh' }} />
     </ErrorStyled>
   );
 };

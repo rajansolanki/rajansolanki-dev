@@ -4,12 +4,9 @@ export const Error = styled.div`
   overflow: visible;
   position: relative;
   min-height: 100vh;
-  padding: 10vh 0;
+  padding: 30vh 0 10vh;
 
   component-error {
-    position: fixed;
-    left: 0;
-    right: 0;
     z-index: 8;
   }
 `;
