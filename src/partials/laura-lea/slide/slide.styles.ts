@@ -12,6 +12,7 @@ export const Container = styled.div`
   background: var(--grey-dark);
 
   component-slide {
+    min-width: 30%;
     margin: 2em;
   }
 `;
