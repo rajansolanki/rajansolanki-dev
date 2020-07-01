@@ -48,10 +48,10 @@ const LoadMore: FC = () => {
         <Text>
           <p>
             Error states at delivered at the component level, which can then
-            decide whether to handle the error itself, or delegate it to
-            `BannerService`. Load more, variant, and product fetch errors are
-            handled by the components themselves, since they offer the most
-            logical placement.
+            decide whether to handle the error itself, or delegate it to{' '}
+            <code>BannerService</code>. Load more, variant, and product fetch
+            errors are handled by the components themselves, since they offer
+            the most logical placement.
           </p>
         </Text>
 

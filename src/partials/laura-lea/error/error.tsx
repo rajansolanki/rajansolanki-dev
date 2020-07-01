@@ -89,10 +89,10 @@ const Error: FC = () => {
             aren&rsquo;t recoverable.
           </p>
           <p ref={globalVisibleRef}>
-            The user is offered a page refresh with a `window.reload`, and a
-            back link if they are on the product detail page. These buttons are
-            wired outside of Angular, so they still function should a fatal
-            error occur.
+            The user is offered a page refresh with a <code>window.reload</code>
+            , and a back link if they are on the product detail page. These
+            buttons are wired outside of Angular, so they still function should
+            a fatal error occur.
           </p>
         </Text>
       </Container>

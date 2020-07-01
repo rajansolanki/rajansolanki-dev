@@ -25,6 +25,7 @@ module.exports = {
     'react-app',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
+    'prettier/react',
   ],
   rules: {
     'react/jsx-filename-extension': [

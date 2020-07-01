@@ -40,7 +40,7 @@ const Masonry: FC = () => {
         </p>
         <p>
           A hybrid masonry/grid solution was created, that utilised CSS Grid and
-          dynamically calculated `span`s.
+          dynamically calculated <code>span</code>s.
         </p>
       </Text>
 

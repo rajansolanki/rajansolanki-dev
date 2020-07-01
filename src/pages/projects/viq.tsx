@@ -22,15 +22,16 @@ const VIQ: FC = () => {
     <Layout projectTitle={projectTitle}>
       <Text>
         <p>
-          The result is a single page static website using `parcel-bundler` as
-          the builder. Styling is done via Sass, and JS using Typescript.
+          The result is a single page static website using{' '}
+          <code>parcel-bundler</code> as the builder. Styling is done via Sass,
+          and JS using Typescript.
         </p>
       </Text>
 
       <Text heading="Animation">
         <p>
           To showcase the brand identity, we added a playful animation using 2d
-          physics engine `matter-js`.
+          physics engine <code>matter-js</code>.
         </p>
         <p>
           To help performance, these animations are created only when the canvas
@@ -40,13 +41,13 @@ const VIQ: FC = () => {
       <Code code={sleep?.html} />
       <Text>
         <p>
-          Both the canvas and text animations on the site are triggered using
-          `IntersectionObserver`. The function&rsquo;s callback implementation
-          allows it to be independent of the logic that runs after it is
-          triggered. Both the canvas and text animations on the site are
-          triggered using `IntersectionObserver`. The function&rsquo;s callback
+          Both the canvas and text animations on the site are triggered using{' '}
+          <code>IntersectionObserver</code>. The function&rsquo;s callback
           implementation allows it to be independent of the logic that runs
-          after it is triggered.
+          after it is triggered. Both the canvas and text animations on the site
+          are triggered using <code>IntersectionObserver</code>. The
+          function&rsquo;s callback implementation allows it to be independent
+          of the logic that runs after it is triggered.
         </p>
       </Text>
       <Code code={visible?.html} />

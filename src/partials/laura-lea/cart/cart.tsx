@@ -31,11 +31,11 @@ const Cart: FC = () => {
           round trip.
         </p>
         <p>
-          `apollo-angular` offers a solution to this in the form of an
-          &lsquo;optimistic response&rsquo;. Since the eventual response of the
-          serve can be predicted, that information can be used to update the UI.
-          When the actual response arrives, the prediction is replaced with the
-          data.
+          <code>apollo-angular</code> offers a solution to this in the form of
+          an &lsquo;optimistic response&rsquo;. Since the eventual response of
+          the serve can be predicted, that information can be used to update the
+          UI. When the actual response arrives, the prediction is replaced with
+          the data.
         </p>
       </Text>
 
