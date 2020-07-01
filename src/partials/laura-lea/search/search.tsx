@@ -39,8 +39,8 @@ const Search: FC = () => {
 
       <Text>
         <p>
-          The tags are fetched from the Shopify API, and handed to `fuse.js` to
-          provide the autocompletion logic.
+          The tags are fetched from the Shopify API, and handed to{' '}
+          <code>fuse.js</code> to provide the autocompletion logic.
         </p>
       </Text>
       <Code code={search?.html} />

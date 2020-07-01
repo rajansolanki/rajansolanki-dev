@@ -32,8 +32,8 @@ const Hover: FC = () => {
         </p>
         <p>
           Since these listeners do not do any blocking work, they are attached
-          manually as `passive` event listeners, instead of utilising
-          Angular&rsquo;s `@HostListener` directive.
+          manually as <code>passive</code> event listeners, instead of utilising
+          Angular&rsquo;s <code>@HostListener</code> directive.
         </p>
       </Text>
 

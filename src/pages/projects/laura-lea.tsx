@@ -15,8 +15,8 @@ const LauraLea: FC = () => (
         the application without also scaling the size of the data.
       </p>
       <p>
-        The end result is an Angular front-end, with `apollo-angular` as the
-        GraphQL client. Unfortunately, the site never went live.
+        The end result is an Angular front-end, with <code>apollo-angular</code>{' '}
+        as the GraphQL client. Unfortunately, the site never went live.
       </p>
     </Text>
     <Masonry />

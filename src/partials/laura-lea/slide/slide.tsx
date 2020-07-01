@@ -37,7 +37,8 @@ const Slide: FC = () => {
         </p>
         <p ref={visibleRef}>
           Instead of using a service or hoisting the data to a shared parent
-          component, the site uses the `@client` feature of Apollo cache
+          component, the site uses the <code>@client</code> feature of Apollo
+          cache
         </p>
       </Text>
 
