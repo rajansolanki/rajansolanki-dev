@@ -42,7 +42,9 @@ context('Laura Lea', () => {
 
   it('should display masonry', () => {
     cy.get(elements.masonry).should('not.exist');
-    cy.contains(elements.masonryText).scrollIntoView();
+    cy.contains(elements.masonryText).scrollIntoView({
+      offset: { top: -50, left: 0 },
+    });
     cy.get(elements.masonry).should('be.visible');
   });
 
@@ -69,7 +71,7 @@ context('Laura Lea', () => {
   it('should display errors', () => {
     cy.get(elements.loadMore).should('not.exist');
     cy.get(elements.loadingBar).scrollIntoView({
-      offset: { top: 100, left: 0 },
+      offset: { top: 300, left: 0 },
     });
     cy.get(elements.loadingBar).should('be.visible').and('have.class', 'idle');
     cy.get(elements.loadMore).should('be.visible');
@@ -93,13 +95,13 @@ context('Laura Lea', () => {
       .should('be.visible')
       .and('contain.text', 'load products');
     cy.contains(elements.errorGlobalText).scrollIntoView({
-      offset: { top: -200, left: 0 },
+      offset: { top: -300, left: 0 },
     });
     cy.get(elements.error)
       .should('be.visible')
       .and('contain.text', 'an error occurred');
     cy.contains(elements.errorGlobalText).scrollIntoView({
-      offset: { top: 0, left: 0 },
+      offset: { top: 200, left: 0 },
     });
     cy.get(elements.error).should('not.be.visible');
   });
@@ -112,7 +114,9 @@ context('Laura Lea', () => {
 
   it('should display cart', () => {
     cy.get(elements.cart).should('not.exist');
-    cy.contains(elements.cartText).scrollIntoView();
+    cy.contains(elements.cartText).scrollIntoView({
+      offset: { top: 600, left: 0 },
+    });
     cy.get(elements.cart).should('be.visible');
     cy.get(elements.cartItemsCount).should('contain.text', 1);
     cy.get(elements.cartItems).should('have.length', 1);

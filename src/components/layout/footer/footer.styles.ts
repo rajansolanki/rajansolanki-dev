@@ -4,6 +4,8 @@ const height = '100vh';
 
 export const Spacer = styled.div`
   margin-bottom: ${height};
+  padding-top: 50vh;
+  background: var(--white);
 `;
 
 export const Footer = styled.footer`
