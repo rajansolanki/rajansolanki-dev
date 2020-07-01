@@ -89,19 +89,9 @@ describe('`Error`', () => {
       it('should set `type` as global if global text is visible', () => {
         (useVisible as jest.Mock).mockReturnValueOnce([() => undefined, false]);
         (useVisible as jest.Mock).mockReturnValueOnce([() => undefined, true]);
-        (useVisible as jest.Mock).mockReturnValueOnce([() => undefined, false]);
         comp.rerender(<Error />);
 
         expect(Page.errorComponent!.getAttribute('type')).toBe('global');
-      });
-
-      it('should set `type` as `undefined` if end is visible', () => {
-        (useVisible as jest.Mock).mockReturnValueOnce([() => undefined, false]);
-        (useVisible as jest.Mock).mockReturnValueOnce([() => undefined, false]);
-        (useVisible as jest.Mock).mockReturnValueOnce([() => undefined, true]);
-        comp.rerender(<Error />);
-
-        expect(Page.errorComponent!.getAttribute('type')).toBeFalsy();
       });
     });
   });

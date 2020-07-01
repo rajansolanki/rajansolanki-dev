@@ -100,10 +100,6 @@ context('Laura Lea', () => {
     cy.get(elements.error)
       .should('be.visible')
       .and('contain.text', 'an error occurred');
-    cy.contains(elements.errorGlobalText).scrollIntoView({
-      offset: { top: 200, left: 0 },
-    });
-    cy.get(elements.error).should('not.be.visible');
   });
 
   it('should display hover', () => {
