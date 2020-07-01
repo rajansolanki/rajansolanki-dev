@@ -18,6 +18,10 @@ describe('`Intro`', () => {
       expect(Page.role).toBeTruthy();
     });
 
+    it('should display link', () => {
+      expect(Page.link.getAttribute('href')).toBe('https://example.com');
+    });
+
     it('should display `description`', () => {
       expect(Page.description).toBeTruthy();
     });
@@ -33,11 +37,22 @@ class Page {
     return screen.getByText('Role');
   }
 
+  static get link(): HTMLElement {
+    return screen.getByRole('link');
+  }
+
   static get description(): HTMLElement {
     return screen.getByText('Content.');
   }
 }
 
 function setupTest(): void {
-  render(<Intro title="Title" role="Role" description="Cont<br/>ent." />);
+  render(
+    <Intro
+      title="Title"
+      role="Role"
+      description="Cont<br/>ent."
+      url="https://example.com"
+    />
+  );
 }

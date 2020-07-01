@@ -4,6 +4,7 @@ slug: absolutely
 company: Absolutely Studio
 role: Co-designer & Developer
 overview: Studio website
+url: https://weareabsolutely.com
 order: 1
 ---
 

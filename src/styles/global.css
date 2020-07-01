@@ -2,13 +2,16 @@
   --white: #fff;
   --white-text: #fff;
   --grey-light: #edeeef;
-  --grey-light-text: #6f768d;
+  --grey-light-text: #dde1ef;
   --grey-medium: #c8c8ce;
   --grey-medium-text: #797c92;
   --grey-dark: #0f111c;
   --grey-dark-text: #232731;
   --black: #0e0f19;
   --black-text: #000;
+  --blue: #2c3cb9;
+
+  --body-text: #6f768d;
 }
 
 body {
@@ -18,7 +21,7 @@ body {
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
-  color: var(--grey-light-text);
+  color: var(--body-text);
 }
 
 main {

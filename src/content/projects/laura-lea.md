@@ -4,6 +4,7 @@ slug: laura-lea
 company: Absolutely Studio
 role: Co-designer & Developer
 overview: Gallery website with shop functionality
+url: https://ll.weareabsolutely.com
 order: 3
 ---
 
