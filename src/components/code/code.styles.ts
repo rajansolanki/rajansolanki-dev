@@ -4,15 +4,20 @@ import { GRID } from 'styles';
 
 export const Code = styled.div`
   overflow: hidden;
-  max-width: 900px;
+  display: flex;
+  justify-content: center;
   margin: 5vh auto;
-  padding: 1em;
   font-size: 0.9em;
-  background: var(--grey-dark);
-  border-radius: 0.3em;
 
   ${GRID.sm} {
     font-size: 1em;
+  }
+
+  & > div {
+    overflow: hidden;
+    padding: 1em;
+    background: var(--grey-dark);
+    border-radius: 0.3em;
   }
 
   code,
