@@ -43,6 +43,7 @@ const Layout: FC<Props> = ({ projectTitle, children }) => {
         title={currentProject?.node?.frontmatter?.title}
         role={currentProject?.node?.frontmatter?.role}
         description={currentProject?.node?.html}
+        url={currentProject?.node?.frontmatter?.url}
       />
     ) : (
       <Header />

@@ -32,6 +32,7 @@ export const useDataQuery = (): AllJobProjectsQuery =>
         role
         company
         overview
+        url
       }
       html
     }

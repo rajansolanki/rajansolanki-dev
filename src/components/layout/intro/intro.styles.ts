@@ -29,6 +29,22 @@ export const ProjectMeta = styled.div`
   }
 `;
 
+export const ProjectLink = styled.a`
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  background: var(--blue);
+  color: var(--grey-light-text);
+  border-radius: 0.2em;
+  transform: color 0.3s ease;
+
+  &:hover,
+  &:active {
+    color: var(--white-text);
+  }
+`;
+
 export const ProjectDescription = styled.div`
   width: 100%;
 
