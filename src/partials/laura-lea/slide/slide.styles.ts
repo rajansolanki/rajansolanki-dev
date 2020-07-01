@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   min-height: 70vh;
-  background: var(--ll-grey-dark);
+  background: var(--grey-dark);
 
   component-slide {
     margin: 2em;

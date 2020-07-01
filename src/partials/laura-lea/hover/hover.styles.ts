@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   min-height: 100vh;
-  background: var(--ll-grey-dark);
+  background: var(--grey-dark);
 
   component-hover {
     flex-shrink: 0;
