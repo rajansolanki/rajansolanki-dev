@@ -82,7 +82,7 @@ const Error: FC = () => {
 
       <LoadMore />
 
-      <Container ref={globalVisibleRef}>
+      <Container>
         <Text>
           <p>
             If things were to go south from there, the global error banner would
@@ -93,7 +93,7 @@ const Error: FC = () => {
             handler, this would also be triggered for any errors thrown that
             aren&rsquo;t recoverable.
           </p>
-          <p>
+          <p ref={globalVisibleRef}>
             The user is offered a page refresh with a `window.reload`, and a
             back link if they are on the product detail page. These buttons are
             wired outside of Angular, so they still function should a fatal

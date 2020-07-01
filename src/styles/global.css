@@ -23,6 +23,8 @@ body {
 
 main {
   overflow: visible;
+  display: flex;
+  flex-direction: column;
   background: var(--white);
 }
 

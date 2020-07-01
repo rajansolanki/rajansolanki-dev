@@ -4,6 +4,11 @@ import { CONTAINER } from 'styles';
 
 export const Job = styled.div`
   ${CONTAINER}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+  margin-bottom: -20vh;
 
   h2 {
     margin: 0;
