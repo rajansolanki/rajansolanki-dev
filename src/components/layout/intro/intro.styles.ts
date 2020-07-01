@@ -13,6 +13,7 @@ export const Project = styled.div`
   align-items: center;
   justify-content: space-between;
   min-height: 80vh;
+  color: var(--grey-medium-text);
 
   h1 {
     margin: 0;

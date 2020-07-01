@@ -1,16 +1,14 @@
 :root {
   --white: #fff;
   --white-text: #fff;
-  --grey-light-text: #808595;
+  --grey-light: #edeeef;
+  --grey-light-text: #6f768d;
   --grey-medium: #c8c8ce;
-  --grey-medium-text: #8d8f9c;
-  --grey-dark: #1d1f21;
+  --grey-medium-text: #797c92;
+  --grey-dark: #0f111c;
   --grey-dark-text: #232731;
-  --black: #181818;
+  --black: #0e0f19;
   --black-text: #000;
-
-  --ll-grey-light: #edeeef;
-  --ll-grey-dark: #1d1e22;
 }
 
 body {

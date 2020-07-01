@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   position: relative;
   min-height: 80vh;
-  background: var(--ll-grey-light);
+  background: var(--grey-light);
 
   component-cart {
     max-width: 500px;
