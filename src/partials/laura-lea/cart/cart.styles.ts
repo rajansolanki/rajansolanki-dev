@@ -8,5 +8,9 @@ export const Container = styled.div`
   component-cart {
     max-width: 500px;
     margin: 0 auto;
+
+    h3 {
+      color: inherit;
+    }
   }
 `;
