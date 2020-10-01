@@ -46,7 +46,7 @@
     "gatsby-plugin-tsconfig-paths": "^1.0.2",
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-remark-prismjs": "^3.5.10",
-    "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-source-filesystem": "^2.3.32",
     "gatsby-transformer-remark": "^2.8.36",
     "popmotion-pose": "^3.4.11",
     "prismjs": "^1.21.0",
