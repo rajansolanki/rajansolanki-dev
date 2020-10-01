@@ -35,7 +35,7 @@
     "@bit/rajansolanki.dev.masonry": "^1.0.2",
     "@bit/rajansolanki.dev.search": "^1.0.1",
     "@bit/rajansolanki.dev.slide": "^1.0.1",
-    "@emotion/core": "^10.0.28",
+    "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@sentry/react": "^5.23.0",
     "@webcomponents/webcomponentsjs": "^2.4.4",
