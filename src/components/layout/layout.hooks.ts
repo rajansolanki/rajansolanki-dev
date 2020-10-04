@@ -33,6 +33,7 @@ export const useDataQuery = (): AllJobProjectsQuery =>
         company
         overview
         url
+        tags
       }
       html
     }

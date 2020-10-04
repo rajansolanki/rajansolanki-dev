@@ -5,6 +5,14 @@ company: Absolutely Studio
 role: Co-designer & Developer
 overview: Gallery website with shop functionality
 url: https://ll.weareabsolutely.com
+tags:
+  - angular
+  - typescript
+  - graphql
+  - sass
+  - shopify
+  - jest
+  - cypress
 order: 3
 ---
 

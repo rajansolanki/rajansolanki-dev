@@ -25,6 +25,10 @@ describe('`Intro`', () => {
     it('should display `description`', () => {
       expect(Page.description).toBeTruthy();
     });
+
+    it('should display tags', () => {
+      expect(Page.tags).toHaveLength(2);
+    });
   });
 });
 
@@ -44,6 +48,10 @@ class Page {
   static get description(): HTMLElement {
     return screen.getByText('Content.');
   }
+
+  static get tags(): HTMLElement[] {
+    return screen.getAllByText('Tag');
+  }
 }
 
 function setupTest(): void {
@@ -53,6 +61,7 @@ function setupTest(): void {
       role="Role"
       description="Cont<br/>ent."
       url="https://example.com"
+      tags={['Tag', 'Tag']}
     />
   );
 }

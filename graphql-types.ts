@@ -573,8 +573,9 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___slug'
   | 'childMarkdownRemark___frontmatter___role'
   | 'childMarkdownRemark___frontmatter___overview'
-  | 'childMarkdownRemark___frontmatter___order'
   | 'childMarkdownRemark___frontmatter___url'
+  | 'childMarkdownRemark___frontmatter___order'
+  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -831,8 +832,9 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___slug'
   | 'frontmatter___role'
   | 'frontmatter___overview'
-  | 'frontmatter___order'
   | 'frontmatter___url'
+  | 'frontmatter___order'
+  | 'frontmatter___tags'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -959,8 +961,9 @@ export type MarkdownRemarkFrontmatter = {
   slug?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
   overview?: Maybe<Scalars['String']>;
-  order?: Maybe<Scalars['Int']>;
   url?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type MarkdownRemarkFrontmatterDate = {
@@ -994,8 +997,9 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
   role?: Maybe<StringQueryOperatorInput>;
   overview?: Maybe<StringQueryOperatorInput>;
-  order?: Maybe<IntQueryOperatorInput>;
   url?: Maybe<StringQueryOperatorInput>;
+  order?: Maybe<IntQueryOperatorInput>;
+  tags?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1259,6 +1263,7 @@ export type QuerySitePluginArgs = {
   version?: Maybe<StringQueryOperatorInput>;
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
   ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
@@ -1689,6 +1694,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
   | 'pluginCreator___pluginFilepath'
   | 'pluginCreator___packageJson___name'
@@ -1836,6 +1842,7 @@ export type SitePlugin = Node & {
   version?: Maybe<Scalars['String']>;
   pluginOptions?: Maybe<SitePluginPluginOptions>;
   nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   pluginFilepath?: Maybe<Scalars['String']>;
   packageJson?: Maybe<SitePluginPackageJson>;
@@ -1966,6 +1973,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
+  | 'browserAPIs'
   | 'ssrAPIs'
   | 'pluginFilepath'
   | 'packageJson___name'
@@ -1995,6 +2003,7 @@ export type SitePluginFilterInput = {
   version?: Maybe<StringQueryOperatorInput>;
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
   ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
@@ -2162,7 +2171,7 @@ export type ProjectFragment = Pick<MarkdownRemark, 'html'> & {
   frontmatter?: Maybe<
     Pick<
       MarkdownRemarkFrontmatter,
-      'title' | 'slug' | 'role' | 'company' | 'overview' | 'url'
+      'title' | 'slug' | 'role' | 'company' | 'overview' | 'url' | 'tags'
     >
   >;
 };

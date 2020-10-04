@@ -52,3 +52,18 @@ export const ProjectDescription = styled.div`
     width: 60%;
   }
 `;
+
+const TagMargin = '0.5em';
+
+export const ProjectTags = styled.div`
+  margin: 8vh -${TagMargin};
+  font-size: 0.8em;
+
+  span {
+    display: inline-block;
+    margin: ${TagMargin};
+    padding: 0.4em 0.6em;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5em;
+  }
+`;

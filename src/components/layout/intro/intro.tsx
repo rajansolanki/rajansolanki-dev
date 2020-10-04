@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { InferProps, string } from 'prop-types';
+import React, { FC, ReactNode } from 'react';
+import { InferProps, string, arrayOf } from 'prop-types';
 
 import {
   Intro as IntroStyled,
@@ -7,6 +7,7 @@ import {
   ProjectMeta,
   ProjectDescription,
   ProjectLink,
+  ProjectTags,
 } from './intro.styles';
 
 const propTypes = {
@@ -14,10 +15,15 @@ const propTypes = {
   role: string.isRequired,
   description: string.isRequired,
   url: string.isRequired,
+  tags: arrayOf(string).isRequired,
 };
 type Props = PartialNullable<InferProps<typeof propTypes>>;
 
-const Intro: FC<Props> = ({ title, role, description, url }) => {
+const Intro: FC<Props> = ({ title, role, description, url, tags }) => {
+  const renderTags = (): ReactNode | null =>
+    // eslint-disable-next-line react/no-array-index-key
+    tags && tags.map((tag, i) => <span key={i}>{tag}</span>);
+
   return (
     <IntroStyled>
       <Project>
@@ -32,11 +38,15 @@ const Intro: FC<Props> = ({ title, role, description, url }) => {
             VISIT SITE
           </ProjectLink>
         </ProjectMeta>
-        <ProjectDescription
-          dangerouslySetInnerHTML={{
-            __html: description || '',
-          }}
-        />
+        <ProjectDescription>
+          <div
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: description || '',
+            }}
+          />
+          <ProjectTags>{renderTags()}</ProjectTags>
+        </ProjectDescription>
       </Project>
     </IntroStyled>
   );

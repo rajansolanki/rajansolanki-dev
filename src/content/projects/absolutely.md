@@ -5,6 +5,15 @@ company: Absolutely Studio
 role: Co-designer & Developer
 overview: Studio website
 url: https://weareabsolutely.com
+tags:
+  - react
+  - gatsby
+  - typescript
+  - mdx
+  - emotion
+  - jest
+  - testing library
+  - cypress
 order: 1
 ---
 
