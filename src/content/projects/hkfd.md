@@ -5,6 +5,16 @@ company: Heckford Advertising
 role: Developer
 overview: Agency portfolio website
 url: https://hkfd.co.uk
+tags:
+  - angular
+  - typescript
+  - node.js
+  - sass
+  - json
+  - google firebase
+  - prismic
+  - jest
+  - protractor
 order: 1
 ---
 

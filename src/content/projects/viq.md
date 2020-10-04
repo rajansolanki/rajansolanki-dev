@@ -5,6 +5,12 @@ company: Absolutely Studio
 role: Co-designer & Developer
 overview: Single page start up website
 url: https://viq.weareabsolutely.com
+tags:
+  - parcel
+  - typescript
+  - sass
+  - jest
+  - cypress
 order: 2
 ---
 
