@@ -4,5 +4,6 @@
   "supportFile": false,
   "pluginsFile": false,
   "reporter": "junit",
-  "reporterOptions": { "mochaFile": "reports/cypress/results.xml" }
+  "reporterOptions": { "mochaFile": "reports/cypress/results.xml" },
+  "retries": 2
 }
