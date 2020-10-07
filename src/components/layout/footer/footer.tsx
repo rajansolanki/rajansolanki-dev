@@ -6,7 +6,13 @@ const Footer: FC = () => (
   <>
     <Spacer />
     <FooterStyled>
-      <a href="mailto:dev@rajansolanki.com">dev@rajansolanki.com</a>
+      <a
+        href="https://github.com/rajansolanki"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
+        github.com/rajansolanki
+      </a>
     </FooterStyled>
   </>
 );
