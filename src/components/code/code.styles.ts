@@ -6,6 +6,7 @@ export const Code = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
+  width: 100%;
   margin: 5vh auto;
   font-size: 0.9em;
 
@@ -15,7 +16,6 @@ export const Code = styled.div`
 
   & > div {
     overflow: hidden;
-    padding: 1em;
     background: var(--grey-dark);
     border-radius: 0.3em;
   }
@@ -29,6 +29,7 @@ export const Code = styled.div`
   pre {
     overflow: auto;
     margin: 0;
+    padding: 1em;
   }
 
   .token.comment,

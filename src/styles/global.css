@@ -46,25 +46,25 @@ pre {
   hyphens: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
+body h1,
+body h2,
+body h3,
+body h4 {
   color: var(--black-text);
 }
 
-h1 {
+body h1 {
   font-size: 1.8em;
 }
 
-h2 {
+body h2 {
   font-size: 1.6em;
 }
 
-h3 {
+body h3 {
   font-size: 1.3em;
 }
 
-h4 {
+body h4 {
   font-size: 1.1em;
 }

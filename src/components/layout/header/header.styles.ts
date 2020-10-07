@@ -6,7 +6,7 @@ export const Header = styled.header`
   ${CONTAINER}
   display: flex;
   align-items: center;
-  min-height: 70vh;
+  min-height: 80vh;
 
   h1,
   h2 {

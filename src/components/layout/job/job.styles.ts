@@ -7,8 +7,9 @@ export const Job = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 60vh;
-  margin-bottom: -20vh;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
 
   h2 {
     margin: 0;
