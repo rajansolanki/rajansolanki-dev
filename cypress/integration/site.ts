@@ -2,7 +2,7 @@ const elements = {
   header: 'header',
   title: 'h1',
   navJob: 'main + div h2',
-  navLink: '#gatsby-focus-wrapper > a',
+  navLink: '#gatsby-focus-wrapper > div:last-of-type > a',
   footer: 'footer',
   footerSpacer: 'main + div',
   footerLink: 'footer a',
@@ -43,7 +43,21 @@ it('should navigate between projects', () => {
   cy.get(elements.footer).should('exist');
   cy.get(elements.navJob).should('not.exist');
   cy.get(elements.navLink).should('not.exist');
-  cy.get(elements.footerLink).should('not.be.visible');
-  cy.get(elements.footerSpacer).scrollIntoView();
   cy.get(elements.footerLink).should('be.visible');
+});
+
+it('should scroll on page route', () => {
+  cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
+  cy.get(elements.navLink).should('contain.text', 'HKFD').click();
+  cy.window().then(({ scrollY }) => expect(scrollY).not.to.be.closeTo(0, 100));
+  cy.get(elements.title).should('not.contain.text', 'Raj');
+  cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
+
+  cy.go('back');
+  cy.get(elements.title).should('not.contain.text', 'Hkfd');
+  cy.window().then(({ scrollY }) => expect(scrollY).not.to.be.closeTo(0, 100));
+
+  cy.go('forward');
+  cy.get(elements.title).should('not.contain.text', 'Raj');
+  cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
 });

@@ -59,7 +59,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/*.styles.ts'],
+      files: ['*.js', '**/*.styles.ts'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off',
       },
