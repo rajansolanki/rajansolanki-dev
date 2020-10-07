@@ -6,6 +6,7 @@ import { GRID, CONTAINER } from 'styles';
 export const Link = styled(GatsbyLink)`
   overflow: hidden;
   display: block;
+  position: relative;
   margin-top: 20vh;
   padding: 0;
   background: var(--grey-dark);
@@ -14,6 +15,7 @@ export const Link = styled(GatsbyLink)`
 
   h3 {
     color: var(--white-text);
+    text-decoration: underline;
   }
 
   &:hover,
@@ -21,7 +23,7 @@ export const Link = styled(GatsbyLink)`
     background: var(--black);
 
     h3 {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 `;

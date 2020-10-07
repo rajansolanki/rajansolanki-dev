@@ -23,6 +23,7 @@ export const Project = styled.div`
 
 export const ProjectMeta = styled.div`
   width: 100%;
+  margin: 10vh 0;
 
   ${GRID.sm} {
     width: 30%;

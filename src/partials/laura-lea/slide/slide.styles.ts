@@ -15,6 +15,10 @@ export const Container = styled.div`
     min-width: 30%;
     margin: 2em;
   }
+
+  & > div {
+    overflow: hidden;
+  }
 `;
 
 export const Code = styled(CodeComponent)`
