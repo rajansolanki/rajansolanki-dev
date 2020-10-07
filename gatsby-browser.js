@@ -1,6 +1,7 @@
 import './src/styles/reset.css';
 import './src/styles/global.css';
 
+import smoothscroll from 'smoothscroll-polyfill';
 import 'zone.js/dist/zone';
 import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 import { init } from '@sentry/react';
@@ -14,6 +15,8 @@ init({
   environment: process.env.NODE_ENV,
   enabled: process.env.NODE_ENV !== 'development',
 });
+
+smoothscroll.polyfill();
 
 // eslint-disable-next-line react/prop-types
 export const wrapPageElement = ({ element }) => <Root>{element}</Root>;
