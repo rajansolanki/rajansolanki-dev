@@ -1,5 +1,6 @@
 import React, { CSSProperties, FC, ReactNode } from 'react';
-import { InferProps, element } from 'prop-types';
+import { InferProps, shape, string } from 'prop-types';
+import { WrapPageElementBrowserArgs } from 'gatsby';
 
 import {
   animated,
@@ -9,12 +10,13 @@ import {
 } from 'react-spring';
 
 const propTypes = {
-  children: element.isRequired,
+  path: string.isRequired,
+  children: shape({}).isRequired,
 };
 type Props = InferProps<typeof propTypes>;
 
-const Root: FC<Props> = ({ children }) => {
-  const transitions = useTransition(children, children.key, {
+const Root: FC<Props> = ({ path, children }) => {
+  const transitions = useTransition(children, path, {
     from: { transform: 'translateY(0%)' },
     leave: { transform: 'translateY(-100%)' },
     config: config.slow,
@@ -35,4 +37,9 @@ const Root: FC<Props> = ({ children }) => {
 
 Root.propTypes = propTypes;
 
-export { Root };
+const wrapPageElement = ({
+  element,
+  props: { path },
+}: WrapPageElementBrowserArgs): ReactNode => <Root path={path}>{element}</Root>;
+
+export { Root, wrapPageElement };
