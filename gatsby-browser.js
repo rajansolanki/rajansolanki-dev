@@ -5,9 +5,6 @@ import smoothscroll from 'smoothscroll-polyfill';
 import 'zone.js/dist/zone';
 import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 import { init } from '@sentry/react';
-import React from 'react';
-
-import { Root } from './src/components/root';
 
 init({
   dsn:
@@ -17,9 +14,6 @@ init({
 });
 
 smoothscroll.polyfill();
-
-// eslint-disable-next-line react/prop-types
-export const wrapPageElement = ({ element }) => <Root>{element}</Root>;
 
 export const shouldUpdateScroll = ({
   routerProps: {
@@ -35,3 +29,5 @@ export const shouldUpdateScroll = ({
   nextIntro.scrollIntoView({ behavior: 'smooth' });
   return false;
 };
+
+export { wrapPageElement } from './src/components/root';

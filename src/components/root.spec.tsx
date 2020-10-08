@@ -24,7 +24,7 @@ class Page {
 
 function setupTest(): void {
   render(
-    <Root>
+    <Root path="/path">
       <div>Content</div>
     </Root>
   );
