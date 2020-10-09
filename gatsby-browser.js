@@ -1,7 +1,6 @@
 import './src/styles/reset.css';
 import './src/styles/global.css';
 
-import smoothscroll from 'smoothscroll-polyfill';
 import 'zone.js/dist/zone';
 import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter';
 import { init } from '@sentry/react';
@@ -13,21 +12,6 @@ init({
   enabled: process.env.NODE_ENV !== 'development',
 });
 
-smoothscroll.polyfill();
-
-export const shouldUpdateScroll = ({
-  routerProps: {
-    location: { action },
-  },
-}) => {
-  if (action !== 'PUSH') return true;
-
-  const intros = document.getElementsByClassName('intro');
-  const nextIntro = intros[intros.length - 1];
-  if (!nextIntro) return false;
-
-  nextIntro.scrollIntoView({ behavior: 'smooth' });
-  return false;
-};
+export const shouldUpdateScroll = () => false;
 
 export { wrapPageElement } from './src/components/root';
