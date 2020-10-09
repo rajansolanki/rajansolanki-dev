@@ -1,5 +1,6 @@
 context('Laura Lea', () => {
   const elements = {
+    root: '#gatsby-focus-wrapper > div',
     title: 'h1',
     loadingBar: 'component-loading-bar > div',
     loadMore: 'component-load-more > div',
@@ -34,7 +35,12 @@ context('Laura Lea', () => {
     slideImage: 'component-slide component-image img',
   };
 
-  beforeEach(() => cy.visit('/projects/laura-lea'));
+  beforeEach(() => {
+    cy.visit('/projects/laura-lea');
+    cy.get(elements.root)
+      .should('exist')
+      .and('not.have.css', 'position', 'fixed');
+  });
 
   it('should display title', () => {
     cy.get(elements.title).should('have.text', 'Laura Lea');

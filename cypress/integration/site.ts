@@ -46,18 +46,23 @@ it('should navigate between projects', () => {
   cy.get(elements.footerLink).should('be.visible');
 });
 
-it('should scroll on page route', () => {
+it('should reset scroll on page route', () => {
   cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
   cy.get(elements.navLink).should('contain.text', 'HKFD').click();
-  cy.window().then(({ scrollY }) => expect(scrollY).not.to.be.closeTo(0, 100));
-  cy.get(elements.title).should('not.contain.text', 'Raj');
+  cy.get(elements.title)
+    .should('not.contain.text', 'Raj')
+    .and('contain.text', 'HKFD');
   cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
 
   cy.go('back');
-  cy.get(elements.title).should('not.contain.text', 'Hkfd');
-  cy.window().then(({ scrollY }) => expect(scrollY).not.to.be.closeTo(0, 100));
+  cy.get(elements.title)
+    .should('not.contain.text', 'HKFD')
+    .and('contain.text', 'Raj');
+  cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
 
   cy.go('forward');
-  cy.get(elements.title).should('not.contain.text', 'Raj');
+  cy.get(elements.title)
+    .should('not.contain.text', 'Raj')
+    .and('contain.text', 'HKFD');
   cy.window().then(({ scrollY }) => expect(scrollY).to.equal(0));
 });

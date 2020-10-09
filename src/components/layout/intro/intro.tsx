@@ -25,7 +25,7 @@ const Intro: FC<Props> = ({ title, role, description, url, tags }) => {
     tags && tags.map((tag, i) => <span key={i}>{tag}</span>);
 
   return (
-    <IntroStyled className="intro">
+    <IntroStyled>
       <Project>
         <ProjectMeta>
           <h1>{title}</h1>

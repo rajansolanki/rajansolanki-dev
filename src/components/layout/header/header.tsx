@@ -10,6 +10,7 @@ const Header: FC = () => {
     height: '100%',
     transform: 'translateY(-50%)',
     config: { tension: 350 },
+    delay: 250,
   });
 
   return (

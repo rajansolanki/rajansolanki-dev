@@ -17,9 +17,21 @@ type Props = InferProps<typeof propTypes>;
 
 const Root: FC<Props> = ({ path, children }) => {
   const transitions = useTransition(children, path, {
-    from: { transform: 'translateY(0%)' },
-    leave: { transform: 'translateY(-100%)' },
-    config: config.slow,
+    from: {
+      position: 'relative',
+      top: 0,
+      left: 0,
+      right: 0,
+      background: '#fff',
+      transform: 'translateY(100vh)',
+    },
+    leave: { transform: 'translateY(-125vh)', zIndex: -1 },
+    enter: [
+      { position: 'fixed', transform: 'translateY(100vh)' },
+      { position: 'fixed', transform: 'translateY(0vh)' },
+      { position: 'relative' },
+    ],
+    config: config.stiff,
   });
 
   const transition = ({
