@@ -6,7 +6,7 @@ import { Text } from './text';
 let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Text`', () => {
   beforeEach(setupTest);

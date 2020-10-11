@@ -18,7 +18,7 @@ jest.mock('shared', () => ({
 let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`LoadMore`', () => {
   beforeEach(setupTest);

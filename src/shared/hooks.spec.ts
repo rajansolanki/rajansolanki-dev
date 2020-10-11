@@ -3,7 +3,7 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { useVisible, useComponent } from './hooks';
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`useComponent`', () => {
   it('should setup component if `shouldInit` is `true`', async () => {

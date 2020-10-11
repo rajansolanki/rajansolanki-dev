@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { Intro } from './intro';
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Intro`', () => {
   beforeEach(setupTest);

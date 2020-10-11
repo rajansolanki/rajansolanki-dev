@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { Link } from './link';
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Link`', () => {
   beforeEach(setupTest);

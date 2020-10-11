@@ -30,7 +30,7 @@ jest.mock('components', () => ({
 let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Masonry`', () => {
   beforeEach(setupTest);

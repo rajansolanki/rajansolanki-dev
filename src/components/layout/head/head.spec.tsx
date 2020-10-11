@@ -13,7 +13,7 @@ jest.mock('gatsby', () => ({
 let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Head`', () => {
   beforeEach(setupTest);

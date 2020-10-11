@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { Root } from './root';
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Root`', () => {
   beforeEach(setupTest);
