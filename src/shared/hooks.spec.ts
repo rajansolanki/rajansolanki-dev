@@ -20,7 +20,7 @@ describe('`useComponent`', () => {
     );
 
     try {
-      await waitForNextUpdate({ suppressErrors: true, timeout: 1 });
+      await waitForNextUpdate({ timeout: 1 });
       // eslint-disable-next-line no-empty
     } catch {
     } finally {
@@ -42,7 +42,7 @@ describe('`useComponent`', () => {
     );
 
     try {
-      await waitForNextUpdate({ suppressErrors: true, timeout: 1 });
+      await waitForNextUpdate({ timeout: 1 });
       // eslint-disable-next-line no-empty
     } catch {
     } finally {
