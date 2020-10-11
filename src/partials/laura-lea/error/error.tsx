@@ -58,10 +58,10 @@ const Error: FC = () => {
           of offering the user possible ways to fix the problem.
         </p>
         <p>
-          Since the concept of GraphQL is to only request the data you need,
-          there are often multiple network requests to fetch the data for a
-          single product. It is inevitable that at some point, a request will
-          fail.
+          Since the concept of GraphQL is to only request the data you need at
+          that point in time, there are often multiple network requests needed
+          to fetch the data for a single product. It is inevitable that at some
+          point, a request will fail.
         </p>
       </Text>
 

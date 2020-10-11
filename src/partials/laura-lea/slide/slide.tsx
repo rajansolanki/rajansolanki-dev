@@ -31,14 +31,14 @@ const Slide: FC = () => {
     <div>
       <Text heading="Cache">
         <p>
-          The structure of the app means that some components often require the
-          same data, but are physically unrelated. For example, the variant
+          The structure of the app means that often components share data
+          requirements, but are physically unrelated. For example, the variant
           select is not located within the product detail module.
         </p>
         <p ref={visibleRef}>
           Instead of using a service or hoisting the data to a shared parent
           component, the site uses the <code>@client</code> feature of Apollo
-          cache
+          cache.
         </p>
       </Text>
 
@@ -52,10 +52,10 @@ const Slide: FC = () => {
 
       <Text>
         <p>
-          Since the active variant id is set in the cache, the component
-          fetching the data for the active variant can query both local and
-          remote data at the same time. This removes the need for components to
-          maintain their own state.
+          Since the active variant <code>id</code> is set in the cache, the
+          component fetching the data can query both local and remote data at
+          the same time. This removes the need for components to maintain their
+          own state.
         </p>
       </Text>
     </div>

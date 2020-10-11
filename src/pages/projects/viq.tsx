@@ -22,9 +22,8 @@ const VIQ: FC = () => {
     <Layout projectTitle={projectTitle}>
       <Text>
         <p>
-          The result is a single page static website using{' '}
-          <code>parcel-bundler</code> as the builder. Styling is done via Sass,
-          and JS using Typescript.
+          The result is a single page static website, using{' '}
+          <code>parcel-bundler</code> as the builder.
         </p>
       </Text>
 
@@ -44,10 +43,7 @@ const VIQ: FC = () => {
           Both the canvas and text animations on the site are triggered using{' '}
           <code>IntersectionObserver</code>. The function&rsquo;s callback
           implementation allows it to be independent of the logic that runs
-          after it is triggered. Both the canvas and text animations on the site
-          are triggered using <code>IntersectionObserver</code>. The
-          function&rsquo;s callback implementation allows it to be independent
-          of the logic that runs after it is triggered.
+          after it is triggered.
         </p>
       </Text>
       <Code code={visible?.html} />

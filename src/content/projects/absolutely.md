@@ -3,7 +3,7 @@ title: Absolutely Studio
 slug: absolutely
 company: Absolutely Studio
 role: Co-designer & Developer
-overview: Studio website
+overview: Portfolio website
 url: https://weareabsolutely.com
 tags:
   - react
@@ -17,6 +17,6 @@ tags:
 order: 1
 ---
 
-Absolutely Studio is a multi-disciplined design studio.
+Absolutely Studio is a multi-disciplined design agency.
 
-The brief was to design and build a studio website.
+The brief was to design and build the studio website.

@@ -2,8 +2,8 @@
 company: Heckford Advertising
 date:
   start: 2017-01-01
-  end:
-title: Junior Front-end Web Developer
+  end: 2020-01-01
+title: Junior Frontend Developer
 ---
 
-- Build and maintain websites and email campaigns for clients
+- Built and maintained websites and email campaigns for clients

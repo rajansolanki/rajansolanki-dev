@@ -9,13 +9,13 @@ const LauraLea: FC = () => (
   <Layout projectTitle={projectTitle}>
     <Text>
       <p>
-        Shopify was chosen as a sales platform with an inventory and payment
-        system easily managed by Laura. Since we were dealing with potentially
-        multiple variants per product, their GraphQL API offered a way to scale
-        the application without also scaling the size of the data.
+        Shopify was chosen as the sales platform because of its inventory and
+        payment system easily managed by Laura. Since we were dealing with
+        potentially multiple variants per product, their GraphQL API offered a
+        way to scale the application without also scaling the size of the data.
       </p>
       <p>
-        The end result is an Angular front-end, with <code>apollo-angular</code>{' '}
+        The end result is an Angular frontend, with <code>apollo-angular</code>{' '}
         as the GraphQL client. Unfortunately, the site never went live.
       </p>
     </Text>
