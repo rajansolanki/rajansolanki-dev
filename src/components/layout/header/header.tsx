@@ -17,7 +17,7 @@ const Header: FC = () => {
     <HeaderStyled>
       <div>
         <animated.h1 style={h1Styles}>Raj</animated.h1>
-        <animated.h2 style={h2Styles}>Designer &amp; Developer</animated.h2>
+        <animated.h2 style={h2Styles}>Frontend Developer</animated.h2>
       </div>
     </HeaderStyled>
   );

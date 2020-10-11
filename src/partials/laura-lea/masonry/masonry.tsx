@@ -39,7 +39,7 @@ const Masonry: FC = () => {
           pagination.
         </p>
         <p>
-          A hybrid masonry/grid solution was created, that utilised CSS Grid and
+          A hybrid masonry/grid solution was created, utilising CSS Grid and
           dynamically calculated <code>span</code>s.
         </p>
       </Text>
@@ -52,7 +52,8 @@ const Masonry: FC = () => {
       <Text>
         <p>
           The index-based cache ensures that as products are added and removed,
-          they maintain their dimensions and the layout is not recalculated.
+          they maintain their dimensions and prevent the layout from needing to
+          be recalculated.
         </p>
       </Text>
       <Code code={masonryCache?.html} />

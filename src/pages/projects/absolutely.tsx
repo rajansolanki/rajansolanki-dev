@@ -47,7 +47,7 @@ const Absolutely: FC = () => {
     <Layout projectTitle={projectTitle}>
       <Text>
         <p>
-          The outcome is a fairly simple design; a contact form, with news posts
+          The outcome is a fairly simple design: a contact form with news posts
           underneath. The site went through several development iterations,
           originally using Gulp, then Parcel, and most recently, Gatsby. The
           jump to React was made in order to solve two pain points of the site:
@@ -60,7 +60,7 @@ const Absolutely: FC = () => {
 
       <Text heading="State">
         <p>
-          The purpose of the form was to provide a very quick, and painless way
+          The purpose of the form was to provide a very quick and painless way
           for people to get in touch with the studio. In reality, unnecessary
           friction was created by the lack of two-way data binding. Validation
           was run only on submit, and managing loading and error states was also
@@ -74,28 +74,22 @@ const Absolutely: FC = () => {
         </p>
       </Text>
       <Code code={inputSet?.html} />
-      <Text>
-        <p>
-          The complexity of the code showed in the user experience, despite the
-          form having only two fields.
-        </p>
-      </Text>
 
       <Text heading="Animations">
         <p>
-          The contact form was designed to reveal an email input on click. The
-          goal was to animate its entrance by pushing the rest of the content
-          further down the page. Since <code>height</code> is not animatable
-          from <code>0</code> to <code>auto</code>, and neither it or any
-          related properties can be animated without recalculating layout,
-          another solution had to be found.
+          The form had a design that revealed the email input on click. The goal
+          was to animate its entrance by pushing the rest of the content further
+          down the page. Since <code>height</code> is not animatable from{' '}
+          <code>0</code> to <code>auto</code>, and neither it or any related
+          properties can be animated without recalculating layout, a workaround
+          had to be used.
         </p>
         <p>
-          A workaround of animating <code>max-height</code> between{' '}
-          <code>0</code> and a large value wouldnt work in this situation, as
-          the element needed to be part of the document flow. Adding an JS
-          animation library would take up the majority of the bundle, so that
-          didnt seem like a suitable solution, either.
+          Animating <code>max-height</code> between <code>0</code> and a large
+          value wouldn’t work in this situation, as the element needed to be
+          part of the document flow. Adding a JS animation library would take up
+          the majority of the bundle, so that didn’t seem like a suitable
+          solution, either.
         </p>
         <p>
           The resolution was to explicitly set the height of the contact form
@@ -111,20 +105,24 @@ const Absolutely: FC = () => {
         </p>
         <p>
           Of course, hardcoding the height of the form also meant making sure
-          the contents did not then overflow. With the contents being text,{' '}
+          the contents did not then overflow. With it being text,{' '}
           <code>br</code>s were added that were toggled at different screen
-          sizes to keep a consisted line count.
+          sizes, maintaining a consistent line count.
         </p>
       </Text>
       <Code code={contentEditable?.html} />
 
       <Text heading="React">
         <p>
+          The complexity of the code showed in the user experience, despite the
+          form having only two fields.
+        </p>
+        <p>
           Achieving a good solution to both problems, on a static site, involved
           some &lsquo;creative&rsquo; workarounds that traded maintainability
           for the end result. Both were easily solved by switching to React. The
           state management was handled by <code>formik</code>, and the
-          animations by <code>react-spring</code>
+          animations by <code>react-spring</code>.
         </p>
       </Text>
       <Code code={reactAnimations?.html} />

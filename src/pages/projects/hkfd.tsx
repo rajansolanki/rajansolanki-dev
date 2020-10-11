@@ -29,25 +29,25 @@ const HKFD: FC = () => {
         <p>The end result is a monorepo with 3 packages:</p>
         <ol>
           <li>
-            Angular
+            <strong>Angular</strong>
             <br />
-            The front end.
+            The frontend
           </li>
           <li>
-            API
+            <strong>API</strong>
             <br />
-            The data for the site, along with its types.
+            The data for the site, along with its types
           </li>
           <li>
-            Email
+            <strong>Email</strong>
             <br />
             The firebase function containing the backend logic for the contact
-            form.
+            form
           </li>
         </ol>
         <p>
           The monorepo structure allows the CI to lint, test, and deploy one or
-          more packages based on changes.
+          more packages based on the changes.
         </p>
       </Text>
 
@@ -61,7 +61,7 @@ const HKFD: FC = () => {
           At the time, there were no headless CMS services that both included
           the features we wanted, and an Angular client. Writing a compatibility
           layer for their data structures was possible, but wasn’t guaranteed to
-          withstand breaking changes.
+          withstand breaking changes from their end.
         </p>
         <p>
           Since most of the data on the site wasn’t going to be regularly
@@ -71,7 +71,7 @@ const HKFD: FC = () => {
       <Code code={types?.html} />
       <Text>
         <p>
-          The data was written in typescript for type-checking, and consumed as
+          The data was written in TypeScript for type-checking, and consumed as
           JSON from the API.
         </p>
       </Text>
@@ -83,21 +83,21 @@ const HKFD: FC = () => {
           for older browsers, and be SEO friendly.
         </p>
         <p>
-          As with any JS framework, polyfilling and transpiling cannot achieve
+          As with any JS framework, polyfilling and transpiling can’t achieve
           the same compatibility as static HTML, and as for SEO, not all search
           engines render JS.
         </p>
         <p>
           To achieve these goals, the site uses server side rendering. An
           Express server passes requests to Angular Universal, which generates
-          static HTML that is rehydrated by the client.
+          static HTML to be rehydrated by the client.
         </p>
       </Text>
       <Code code={server?.html} />
       <Text>
         <p>
           Despite the mostly static pages, rendering on request prevents the few
-          dynamic pages from being stale for the user and web crawler.
+          dynamic pages from being stale for both the user and web crawler.
         </p>
       </Text>
     </Layout>
