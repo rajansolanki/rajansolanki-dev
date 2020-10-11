@@ -8,7 +8,7 @@ jest.mock('components', () => ({
 }));
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Index`', () => {
   beforeEach(setupTest);

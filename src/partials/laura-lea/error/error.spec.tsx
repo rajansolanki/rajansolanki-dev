@@ -36,7 +36,7 @@ jest.mock('./load-more/load-more', () => ({
 let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Error`', () => {
   beforeEach(setupTest);

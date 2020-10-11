@@ -23,7 +23,7 @@ jest.mock('partials', () => ({
 }));
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`LauraLea`', () => {
   beforeEach(setupTest);

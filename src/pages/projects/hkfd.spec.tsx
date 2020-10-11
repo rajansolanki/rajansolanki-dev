@@ -32,7 +32,7 @@ jest.mock('components', () => ({
 }));
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`HKFD`', () => {
   beforeEach(setupTest);

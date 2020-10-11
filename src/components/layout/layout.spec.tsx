@@ -180,7 +180,7 @@ jest.mock('./layout.hooks', () => ({
 let comp: RenderResult;
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`Layout`', () => {
   beforeEach(setupTest);

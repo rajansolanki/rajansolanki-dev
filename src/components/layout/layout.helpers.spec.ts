@@ -6,7 +6,7 @@ import {
 } from './layout.helpers';
 
 beforeEach(jest.clearAllMocks);
-afterEach(expect.hasAssertions);
+afterEach(() => expect.hasAssertions());
 
 describe('`getCurrentProject`', () => {
   describe('No `projectTitle`', () => {
