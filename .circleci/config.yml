@@ -24,9 +24,6 @@ jobs:
           name: yarn
           command: yarn --frozen-lockfile
       - run:
-          name: commitlint
-          command: yarn commitlint --from origin/master --to ${CIRCLE_SHA1} -V
-      - run:
           name: eslint
           command: yarn eslint "**/*.{tsx,ts,js}" --max-warnings=0
       - run:
