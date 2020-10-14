@@ -47,7 +47,7 @@
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-remark-prismjs": "^3.5.10",
     "gatsby-source-filesystem": "^2.3.11",
-    "gatsby-transformer-remark": "^2.8.36",
+    "gatsby-transformer-remark": "^2.8.39",
     "popmotion-pose": "^3.4.11",
     "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
