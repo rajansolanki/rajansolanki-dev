@@ -68,7 +68,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@testing-library/react-hooks": "^3.4.2",
-    "@types/react-dom": "^16.9.8",
+    "@types/react-dom": "^16.9.9",
     "@types/react-helmet": "^6.1.0",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
