@@ -77,7 +77,7 @@
     "babel-preset-gatsby": "0.5.16",
     "cypress": "^5.5.0",
     "eslint": "6.x",
-    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-react-app": "5.2.1",
     "eslint-import-resolver-typescript": "^2.3.0",
