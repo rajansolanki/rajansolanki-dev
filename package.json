@@ -95,7 +95,7 @@
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.14.0",
-    "start-server-and-test": "^1.11.5",
+    "start-server-and-test": "^1.11.6",
     "typescript": "^3.9.7"
   },
   "resolutions": {
