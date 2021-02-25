@@ -55,7 +55,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^6.0.0-beta.2",
     "react-spring": "^8.0.27",
-    "rxjs": "6.6.4",
+    "rxjs": "6.6.6",
     "tslib": "^1.14.1",
     "zone.js": "0.10.3"
   },
