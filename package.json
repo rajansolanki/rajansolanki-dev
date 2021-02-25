@@ -96,7 +96,7 @@
     "prettier": "^2.1.2",
     "react-test-renderer": "^16.14.0",
     "start-server-and-test": "^1.11.7",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.9"
   },
   "resolutions": {
     "remark": "11.0.2"
