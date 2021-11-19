@@ -36,7 +36,7 @@
     "@bit/rajansolanki.dev.slide": "^1.0.1",
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
-    "@sentry/react": "^5.29.2",
+    "@sentry/react": "^6.15.0",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "gatsby": "^2.32.13",
     "gatsby-plugin-emotion": "^4.5.0",
