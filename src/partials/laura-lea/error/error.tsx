@@ -12,29 +12,26 @@ const errorComponent = import('@bit/rajansolanki.dev.error');
 type ErrorType = 'app' | 'global' | undefined;
 
 const Error: FC = () => {
-  const {
-    bannerDisplay,
-    bannerCatch,
-    bannerStream,
-  }: CodeBannerQuery = useStaticQuery(graphql`
-    query CodeBanner {
-      bannerDisplay: markdownRemark(
-        fileAbsolutePath: { glob: "**/laura-lea/banner-display.md" }
-      ) {
-        html
+  const { bannerDisplay, bannerCatch, bannerStream }: CodeBannerQuery =
+    useStaticQuery(graphql`
+      query CodeBanner {
+        bannerDisplay: markdownRemark(
+          fileAbsolutePath: { glob: "**/laura-lea/banner-display.md" }
+        ) {
+          html
+        }
+        bannerCatch: markdownRemark(
+          fileAbsolutePath: { glob: "**/laura-lea/banner-catch.md" }
+        ) {
+          html
+        }
+        bannerStream: markdownRemark(
+          fileAbsolutePath: { glob: "**/laura-lea/banner-stream.md" }
+        ) {
+          html
+        }
       }
-      bannerCatch: markdownRemark(
-        fileAbsolutePath: { glob: "**/laura-lea/banner-catch.md" }
-      ) {
-        html
-      }
-      bannerStream: markdownRemark(
-        fileAbsolutePath: { glob: "**/laura-lea/banner-stream.md" }
-      ) {
-        html
-      }
-    }
-  `);
+    `);
 
   const [errorType, setErrorType] = useState<ErrorType>('app');
 
