@@ -156,9 +156,8 @@ describe('`useVisible`', () => {
         it('should return `isVisible` as `false`', () => {
           const { result } = renderHook(() => useVisible());
 
-          const [
-            [handleObserve],
-          ] = (IntersectionObserver as jest.Mock).mock.calls;
+          const [[handleObserve]] = (IntersectionObserver as jest.Mock).mock
+            .calls;
           act(() => handleObserve([{ isIntersecting: false }]));
 
           expect(result.current[1]).toBe(false);
@@ -167,9 +166,8 @@ describe('`useVisible`', () => {
         it('should not call `observer` `disconnect`', () => {
           renderHook(() => useVisible());
 
-          const [
-            [handleObserve],
-          ] = (IntersectionObserver as jest.Mock).mock.calls;
+          const [[handleObserve]] = (IntersectionObserver as jest.Mock).mock
+            .calls;
           act(() => handleObserve([{ isIntersecting: false }]));
 
           expect(
@@ -182,9 +180,8 @@ describe('`useVisible`', () => {
         it('should return `isVisible` as `true`', () => {
           const { result } = renderHook(() => useVisible());
 
-          const [
-            [handleObserve],
-          ] = (IntersectionObserver as jest.Mock).mock.calls;
+          const [[handleObserve]] = (IntersectionObserver as jest.Mock).mock
+            .calls;
           act(() => handleObserve([{ isIntersecting: true }]));
 
           expect(result.current[1]).toBe(true);
@@ -193,9 +190,8 @@ describe('`useVisible`', () => {
         it('should call `observer` `disconnect`', () => {
           renderHook(() => useVisible());
 
-          const [
-            [handleObserve],
-          ] = (IntersectionObserver as jest.Mock).mock.calls;
+          const [[handleObserve]] = (IntersectionObserver as jest.Mock).mock
+            .calls;
           act(() => handleObserve([{ isIntersecting: true }]));
 
           expect(
