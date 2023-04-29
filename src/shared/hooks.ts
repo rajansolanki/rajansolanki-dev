@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { NgModuleRef } from '@angular/core';
+import type { NgModuleRef } from '@angular/core';
 
 export const useComponent = (
   importPath: Promise<{
@@ -19,7 +19,7 @@ export const useComponent = (
 
       setModule(moduleRes);
     };
-    shouldInit && !module && createModule();
+    typeof window !== 'undefined' && shouldInit && !module && createModule();
 
     return (): void | undefined => {
       isDestroyed = true;
