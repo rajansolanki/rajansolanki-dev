@@ -1,11 +1,16 @@
 'use client';
 
+import React from 'react';
+
 import dynamic from 'next/dynamic'
 
 // import { useComponent, useVisible } from 'shared';
 // import { Text, Code } from 'components';
 import { Container } from './masonry.styles';
 import { useVisible, useComponent } from 'src/shared/hooks';
+
+
+console.log('temp.tsx');
 
 (function() {
     if (
@@ -51,13 +56,24 @@ const Temp3 = dynamic(() => import('@webcomponents/webcomponentsjs/custom-elemen
 });
 Temp3();
 
-const masonryComponent = import('@bit/rajansolanki.dev.masonry');
+import { NgModuleRef, getPlatform, Type, Injector } from '@angular/core';
+import { platformBrowser } from '@angular/platform-browser';
 
+// console.log('platform', getPlatform(), platformBrowser());
+
+
+const masonryComponent = import('@rajansolanki/ll-cart');
+
+// console.log('masonry', masonryComponent)
+
+
+// WORKING
+// need to run `yarn temp` && `yarn temp2`, copy over package.json files and replace .mjs in package.json with .js
 
 const Temp = () => {
     const [visibleRef, isVisible] = useVisible();
 
-    useComponent(masonryComponent, isVisible);
+    useComponent(masonryComponent, true);
 
 return <>
 <h1>asdasd</h1>
@@ -77,7 +93,7 @@ return <>
       {/* </Text> */}
 
       <Container>
-        <component-masonry />
+        <component-cart />
       </Container>
 
       {/* <Text> */}

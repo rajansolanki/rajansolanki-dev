@@ -2,7 +2,8 @@
   "include": [
     "./src/**/*",
     "typings.d.ts",
-    ".next/types/**/*.ts", "app"
+    ".next/types/**/*.ts",
+    "app"
   ],
   "compilerOptions": {
     "baseUrl": "./",
@@ -58,7 +59,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "incremental": true
   },
   "exclude": [
     "node_modules"

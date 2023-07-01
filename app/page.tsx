@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic'
 
 const Temp2 = dynamic(() => import('./temp'), {
-    // ssr: false,
+    ssr: false,
 })
 
 

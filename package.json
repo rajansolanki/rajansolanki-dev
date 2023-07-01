@@ -11,8 +11,8 @@
     "test:spec:watch": "jest --watch",
     "test:e2e": "start-test serve http://localhost:8000 '$(npm bin)/cypress run'",
     "test:e2e:watch": "start-test serve http://localhost:8000 '$(npm bin)/cypress open'",
-    "postuninstall": "ngcc",
-    "postinstall": "ngcc"
+    "temp": "npx babel node_modules/@angular --out-dir dist/temp/@angular --plugins=@angular/compiler-cli/linker/babel",
+    "temp2": "npx babel node_modules/@rajansolanki --out-dir dist/temp/@rajansolanki --plugins=@angular/compiler-cli/linker/babel"
   },
   "husky": {
     "hooks": {
@@ -20,13 +20,13 @@
     }
   },
   "dependencies": {
-    "@angular/animations": "9.1.4",
-    "@angular/common": "9.1.4",
-    "@angular/compiler": "9.1.4",
-    "@angular/core": "9.1.4",
-    "@angular/elements": "9.1.4",
-    "@angular/forms": "9.1.4",
-    "@angular/platform-browser": "9.1.4",
+    "@angular/animations": "^15.2.8",
+    "@angular/common": "^15.2.8",
+    "@angular/compiler": "^15.2.8",
+    "@angular/core": "^15.2.8",
+    "@angular/elements": "^15.2.8",
+    "@angular/forms": "^15.2.8",
+    "@angular/platform-browser": "^15.2.8",
     "@bit/rajansolanki.dev.cart": "^1.0.2",
     "@bit/rajansolanki.dev.error": "^2.0.2",
     "@bit/rajansolanki.dev.hover": "^1.0.1",
@@ -37,6 +37,8 @@
     "@bit/rajansolanki.dev.slide": "^1.0.1",
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
+    "@rajansolanki/ll-cart": "^0.0.3",
+    "@rajansolanki/ll-shared": "^0.0.2",
     "@sentry/react": "^6.15.0",
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "eslint-config-next": "^13.3.1",
@@ -49,6 +51,7 @@
     "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-remark": "^2.16.1",
+    "glob": "^10.2.6",
     "next": "^13.3.1",
     "popmotion-pose": "^3.4.11",
     "prismjs": "^1.28.0",
@@ -57,13 +60,15 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.0.0-beta.2",
     "react-spring": "^8.0.27",
-    "rxjs": "6.6.7",
+    "rxjs": "^7.8.1",
     "tslib": "^1.14.1",
     "zone.js": "0.10.3"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "9.1.4",
-    "@babel/core": "^7.16.0",
+    "@angular/compiler-cli": "^15.2.8",
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.12.7",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
@@ -74,6 +79,7 @@
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",
     "babel-jest": "^26.6.3",
+    "babel-loader": "^9.1.2",
     "babel-preset-gatsby": "0.9.1",
     "cypress": "^5.6.0",
     "eslint": "6.x",
@@ -96,7 +102,10 @@
     "prettier": "^2.1.2",
     "react-test-renderer": "^17.0.2",
     "start-server-and-test": "^1.14.0",
-    "typescript": "^3.9.9"
+    "transpile-webpack-plugin": "^1.1.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.82.0",
+    "webpack-cli": "^5.0.2"
   },
   "resolutions": {
     "remark": "11.0.2"

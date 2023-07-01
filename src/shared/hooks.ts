@@ -13,11 +13,32 @@ export const useComponent = (
     let isDestroyed = false;
 
     const createModule = async (): Promise<void> => {
-      const { default: setup } = await importPath;
-      const moduleRes = await setup();
-      if (isDestroyed) return;
+      // const { default: setup } = await importPath;
 
-      setModule(moduleRes);
+// console.log('default', await importPath);
+
+
+try {
+
+
+  const temp = await importPath;
+
+  const temp2 = await temp.setup();
+  
+  // console.log(temp.CartModule);
+  
+  // const temp2 = new temp.CartModule();
+  console.log({temp, temp2});
+  
+  
+  // const moduleRes = await setup();
+  if (isDestroyed) return;
+  
+  setModule(temp2);
+} catch (err){
+
+  console.error(err);
+}
     };
     typeof window !== 'undefined' && shouldInit && !module && createModule();
 
