@@ -62,7 +62,7 @@ import { platformBrowser } from '@angular/platform-browser';
 // console.log('platform', getPlatform(), platformBrowser());
 
 
-const masonryComponent = import('@rajansolanki/ll-cart');
+const masonryComponent = import('@rajansolanki/ll-slide');
 
 // console.log('masonry', masonryComponent)
 
@@ -93,7 +93,7 @@ return <>
       {/* </Text> */}
 
       <Container>
-        <component-cart />
+        <component-slide />
       </Container>
 
       {/* <Text> */}

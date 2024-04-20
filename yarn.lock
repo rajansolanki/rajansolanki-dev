@@ -3499,17 +3499,66 @@
     style-value-types "^3.1.7"
     tslib "^1.10.0"
 
-"@rajansolanki/ll-cart@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/@rajansolanki/ll-cart/-/ll-cart-0.0.3.tgz#819430a05a09c5e4422db13d61b0d32eb7dbcd25"
-  integrity sha512-xYT2wcZUcNeECBthL2j0SrlBw1XTUSlRUI/uM1u9Sm3KN1T/p2hk77fkoz2FjiFE/8iWWLaPVrx5oMMp/pjJbQ==
+"@rajansolanki/ll-cart@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-cart/-/ll-cart-1.0.0.tgz#88a9b22426a2cacde0cbc511ee5708e0b68512eb"
+  integrity sha512-tJxcCzGy+j7gg8IEPMT40nZF1mxvQ386a+zi/CiEYIdG2cdi2nyzWdWhz0uf+su8eyEX4JsZcxRjPUw7qiCzOg==
   dependencies:
     tslib "^2.3.0"
 
-"@rajansolanki/ll-shared@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@rajansolanki/ll-shared/-/ll-shared-0.0.2.tgz#2a89f1ab50fe1eafb27c97990afa04d04b49e605"
-  integrity sha512-k7H+ynHc2NSiNRCVsyojVDXiyAv2CWI5t2bD223U96W8pkqWGTK0ardAE5fY+JWdVN6uder/ZsDMgrQjWK6qDg==
+"@rajansolanki/ll-error@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-error/-/ll-error-1.0.0.tgz#2ef78d8cf931264199225ff53083fa8d89f39569"
+  integrity sha512-mHSv/iui24tmrXRzMvMGGMgQqbnAnnXus4D2hcYmTPme6oogbAXT1vEJrNbX5Fd617FTtPA7FhzzzcKP8tmnrQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-hover@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-hover/-/ll-hover-1.0.0.tgz#e57049a64d503a786837f8ebfcfc602bfb900fb7"
+  integrity sha512-l9pBqFP3sN6WRPjIl8KVAWsH26ff8NZe3TttyOCPZ8neDmps3dsZkNCz+qfqNli2KRRCVSobXiio/4cCDYmoLQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-load-more@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-load-more/-/ll-load-more-1.0.0.tgz#bd50e7d599eb8ae7a11a4f989ff1e64fc765fefd"
+  integrity sha512-vwYKk3ldH4tZS56W/Z/aBOSU6ITYnKRR9e+vNdOVQmVMDt35KMsycHaZsNw1dgNU66vaRL0XcAKmSjC299ClPQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-loading-bar@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-loading-bar/-/ll-loading-bar-1.0.0.tgz#bd7554e2bfdce1398e24641e49a2dfc167df22f0"
+  integrity sha512-/XbBrAFi14ne5armCr5Lf2cWz26saHTyqCPbJ+2640j/+4U+1HXal/L6tyeCPf/0HQo0wbZM9aHSvlCGYqXurA==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-masonry@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-masonry/-/ll-masonry-1.0.0.tgz#2b90a89b599f495b3a0f5272a10c279d3428c42b"
+  integrity sha512-AFX01GWzMbqmDQ2BIf4+bExFAJBVeMdQPNkQ2Ud7iwL/QjN88pmup8D4JPrlcl9HYuBQ1fp8fq5m906edVoD/Q==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-search@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-search/-/ll-search-1.0.0.tgz#b7074862401a73042d0eef6e35385f52afee809a"
+  integrity sha512-loI73JeMzGP0WUGtvyunbhJ7AH1uYrxax/oNmKcqbjEqAM9A+pDnL7KkPbMymVeMljfy4wA0Rziee+XpxVbmjA==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-shared@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-shared/-/ll-shared-1.0.0.tgz#f2741529ad893066917452632dd1843bc7d81616"
+  integrity sha512-7qCGyIgUFIOrDSRzvTWfG4XBM/ynJ09MKADs2iYwGBvZqwZ3tPwRp5Swc+iC2rl0mbqFe6rculT7JvHzE9i/MQ==
+  dependencies:
+    tslib "^2.3.0"
+
+"@rajansolanki/ll-slide@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@rajansolanki/ll-slide/-/ll-slide-1.0.0.tgz#623f1b770263a4fc71e6a5104ce3b425276d6b8d"
+  integrity sha512-QWtbmwHiM7yPoOPA+iCCiQ31/L6DFBEK8Jguk+LVSQ/5sqniNjoKmak/YxryObPOZyMc961nG1fgsozzzVqMVQ==
   dependencies:
     tslib "^2.3.0"
 

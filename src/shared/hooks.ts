@@ -22,8 +22,9 @@ try {
 
 
   const temp = await importPath;
+  console.log({ temp})
 
-  const temp2 = await temp.setup();
+  const temp2 = await (temp).setup();
   
   // console.log(temp.CartModule);
   

@@ -11,8 +11,7 @@
     "test:spec:watch": "jest --watch",
     "test:e2e": "start-test serve http://localhost:8000 '$(npm bin)/cypress run'",
     "test:e2e:watch": "start-test serve http://localhost:8000 '$(npm bin)/cypress open'",
-    "temp": "npx babel node_modules/@angular --out-dir dist/temp/@angular --plugins=@angular/compiler-cli/linker/babel",
-    "temp2": "npx babel node_modules/@rajansolanki --out-dir dist/temp/@rajansolanki --plugins=@angular/compiler-cli/linker/babel"
+    "postinstall": "babel node_modules/@angular --out-dir node_modules/@angular --plugins=@angular/compiler-cli/linker/babel --copy-files --keep-file-extension & babel node_modules/@rajansolanki --out-dir node_modules/@rajansolanki --plugins=@angular/compiler-cli/linker/babel --copy-files --keep-file-extension"
   },
   "husky": {
     "hooks": {
@@ -37,8 +36,15 @@
     "@bit/rajansolanki.dev.slide": "^1.0.1",
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
-    "@rajansolanki/ll-cart": "^0.0.3",
-    "@rajansolanki/ll-shared": "^0.0.2",
+    "@rajansolanki/ll-cart": "^1.0.0",
+    "@rajansolanki/ll-error": "^1.0.0",
+    "@rajansolanki/ll-hover": "^1.0.0",
+    "@rajansolanki/ll-load-more": "^1.0.0",
+    "@rajansolanki/ll-loading-bar": "^1.0.0",
+    "@rajansolanki/ll-masonry": "^1.0.0",
+    "@rajansolanki/ll-search": "^1.0.0",
+    "@rajansolanki/ll-shared": "^1.0.0",
+    "@rajansolanki/ll-slide": "^1.0.0",
     "@sentry/react": "^6.15.0",
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "eslint-config-next": "^13.3.1",
