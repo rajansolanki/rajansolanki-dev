@@ -1,7 +1,45 @@
 import { ReactNode } from 'react';
+import { Heebo, Roboto_Mono } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import '../styles/reset.css';
+import '../styles/global.css';
 
-export const metadata = {
+const primary = Heebo({
+  variable: '--font-primary',
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Roboto',
+    'Helvetica Neue',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+  ],
+});
+
+const secondary = Roboto_Mono({
+  variable: '--font-secondary',
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: [
+    'Inconsolata',
+    'Monaco',
+    'Consolas',
+    'Courier New',
+    'Courier',
+    'monospace',
+  ],
+});
+
+export const metadata: Metadata = {
   title: 'Raj',
+  manifest: 'site.webmanifest',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -10,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }): ReactNode {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" className={`${primary.variable} ${secondary.variable}`}>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -28,15 +66,9 @@ export default function RootLayout({
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
       <meta name="msapplication-TileColor" content="#ffc40d" />
-      <meta name="theme-color" content="#ffffff" />
 
-      <link
-        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400&family=Roboto+Mono:wght@400&display=swap"
-        rel="stylesheet"
-      />
       <body>{children}</body>
     </html>
   );

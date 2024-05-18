@@ -1,9 +1,10 @@
+'use client';
+
 import styled from '@emotion/styled';
-import { Link as GatsbyLink } from 'gatsby';
 
 import { GRID, CONTAINER } from 'styles';
 
-export const Link = styled(GatsbyLink)`
+export const Link = styled.a`
   overflow: hidden;
   display: block;
   position: relative;
