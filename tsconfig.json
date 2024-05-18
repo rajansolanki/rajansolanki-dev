@@ -1,17 +1,31 @@
 {
-  "include": ["./src/**/*", "typings.d.ts"],
+  "include": [
+    "./src/**/*",
+    "typings.d.ts",
+    ".next/types/**/*.ts"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "graphql-types": ["graphql-types"],
-      "styles": ["src/styles"],
-      "components": ["src/components"],
-      "shared": ["src/shared"],
-      "partials": ["src/partials"]
+      "graphql-types": [
+        "graphql-types"
+      ],
+      "styles": [
+        "src/styles"
+      ],
+      "components": [
+        "src/components"
+      ],
+      "shared": [
+        "src/shared"
+      ],
+      "partials": [
+        "src/partials"
+      ]
     },
     "target": "esnext",
     "module": "commonjs",
-    "jsx": "react",
+    "jsx": "preserve",
     "noEmit": true,
     "isolatedModules": true,
     "strict": true,
@@ -30,6 +44,23 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

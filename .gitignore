@@ -5,6 +5,7 @@ cypress/screenshots
 cypress/videos
 reports
 .vercel
+.next
 
 *.log
 .DS_Store
