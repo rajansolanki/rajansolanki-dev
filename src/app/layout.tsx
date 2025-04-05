@@ -34,7 +34,10 @@ const secondary = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Raj',
+  title: {
+    template: 'Raj – %s',
+    default: 'Raj',
+  },
   manifest: 'site.webmanifest',
 };
 

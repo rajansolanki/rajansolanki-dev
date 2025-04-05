@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { InferProps, string, shape } from 'prop-types';
+import { InferProps, string, shape, node } from 'prop-types';
 
 import { Job as JobStyled, JobMeta, JobDescription } from './job.styles';
 
@@ -13,7 +13,7 @@ const propTypes = {
     end: string,
   }).isRequired,
   title: string.isRequired,
-  description: string.isRequired,
+  description: node.isRequired,
 };
 type Props = PartialNullable<InferProps<typeof propTypes>>;
 
@@ -32,11 +32,7 @@ const Job: FC<Props> = ({ company, date, title, description }) => {
           {title}
         </p>
       </JobMeta>
-      <JobDescription
-        dangerouslySetInnerHTML={{
-          __html: description || '',
-        }}
-      />
+      <JobDescription>{description}</JobDescription>
     </JobStyled>
   );
 };

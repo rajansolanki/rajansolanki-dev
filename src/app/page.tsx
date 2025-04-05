@@ -13,7 +13,11 @@ const Page = ({}: Props) => {
         date={{ start: '2017-01-01', end: '2020-01-01' }}
         title={'Junior Frontend Developer'}
         description={
-          'Built and maintained websites and email campaigns for clients'
+          <ul>
+            <li>
+              Built and maintained websites and email campaigns for clients
+            </li>
+          </ul>
         }
       />
       <Link slug="hkfd" title="HKFD" overview="Agency portfolio website" />

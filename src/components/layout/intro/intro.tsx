@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { InferProps, string, arrayOf } from 'prop-types';
+import { InferProps, string, arrayOf, node } from 'prop-types';
 
 import {
   Intro as IntroStyled,
@@ -13,7 +13,7 @@ import {
 const propTypes = {
   title: string.isRequired,
   role: string.isRequired,
-  description: string.isRequired,
+  description: node.isRequired,
   url: string.isRequired,
   tags: arrayOf(string).isRequired,
 };
@@ -39,12 +39,7 @@ const Intro: FC<Props> = ({ title, role, description, url, tags }) => {
           </ProjectLink>
         </ProjectMeta>
         <ProjectDescription>
-          <div
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: description || '',
-            }}
-          />
+          {description}
           <ProjectTags>{renderTags()}</ProjectTags>
         </ProjectDescription>
       </Project>

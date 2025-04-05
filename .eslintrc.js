@@ -64,5 +64,11 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
       },
     },
+    {
+      files: ['**/*.tsx'],
+      rules: {
+        'react/react-in-jsx-scope': 'off',
+      },
+    },
   ],
 };

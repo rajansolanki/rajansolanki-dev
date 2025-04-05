@@ -1,3 +1,5 @@
+'use client';
+
 import styled from '@emotion/styled';
 
 import { GRID } from 'styles';
@@ -32,6 +34,16 @@ export const Code = styled.div`
     padding: 1em;
   }
 
+  --sh-class: #ffffb6;
+  --sh-identifier: #a8ff60;
+  --sh-sign: #ededed;
+  --sh-property: #0550ae;
+  --sh-entity: #ffffb6;
+  --sh-jsxliterals: #6266d1;
+  --sh-string: #87c38a;
+  --sh-keyword: #96cbfe;
+  --sh-comment: #a19595;
+  /*   
   .token.comment,
   .token.prolog,
   .token.doctype,
@@ -127,5 +139,5 @@ export const Code = styled.div`
 
   .token.italic {
     font-style: italic;
-  }
+  } */
 `;
